@@ -1,193 +1,122 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Sample user data
-    const userData = {
-      name: "Thabo Mbeki",
-      email: "thabo@smartstudy.sa",
-      grade: "4",
-      language: "en",
-      streak: 5,
-      points: 1250,
-      lastActive: "2023-06-15",
-      achievements: [
-        {
-          id: "first-lesson",
-          name: "First Lesson",
-          description: "Completed your first lesson",
-          icon: "fas fa-star",
-          date: "2023-05-10"
-        },
-        {
-          id: "quiz-master",
-          name: "Quiz Master",
-          description: "Scored 90% or higher on 3 quizzes",
-          icon: "fas fa-trophy",
-          date: "2023-06-01"
-        },
-        // More achievements...
-      ],
-      recentActivity: [
-        {
-          type: "quiz",
-          title: "Math: Addition Quiz",
-          result: "85%",
-          date: "2023-06-15"
-        },
-        {
-          type: "lesson",
-          title: "English: Reading Comprehension",
-          progress: "100%",
-          date: "2023-06-14"
-        },
-        // More activities...
-      ]
-    };
-  
-    // DOM elements
-    const profileForm = document.getElementById('profileForm');
-    const fullName = document.getElementById('fullName');
-    const email = document.getElementById('email');
-    const gradeLevel = document.getElementById('gradeLevel');
-    const languagePreference = document.getElementById('languagePreference');
-    const badgesGrid = document.getElementById('badgesGrid');
-    const tabBtns = document.querySelectorAll('.tab-btn');
-    const tabContents = document.querySelectorAll('.tab-content');
-  
-    // Initialize profile page
-    function initProfile() {
-      loadUserData();
-      renderAchievements();
-      setupEventListeners();
+// js/profile.js
+import { authService } from '/js/auth.js';
+
+document.addEventListener('DOMContentLoaded', async () => {
+  // Check authentication
+  try {
+    const user = await authService.getCurrentUser();
+    if (!user) {
+      throw new Error('Not authenticated');
     }
-  
-    // Load user data into form
-    function loadUserData() {
-      document.getElementById('profileName').textContent = userData.name;
-      document.getElementById('streakCount').textContent = userData.streak;
-      document.getElementById('pointsCount').textContent = userData.points.toLocaleString();
-      document.getElementById('badgesCount').textContent = userData.achievements.length;
-      
-      fullName.value = userData.name;
-      email.value = userData.email;
-      gradeLevel.value = userData.grade;
-      languagePreference.value = userData.language;
-    }
-  
-    // Render achievements badges
-    function renderAchievements() {
-      badgesGrid.innerHTML = '';
-      
-      if (userData.achievements.length === 0) {
-        badgesGrid.innerHTML = '<p>No achievements yet. Keep learning to earn badges!</p>';
-        return;
-      }
-      
-      userData.achievements.forEach(achievement => {
-        const badge = document.createElement('div');
-        badge.className = 'badge-card';
-        badge.innerHTML = `
-          <div class="badge-icon">
-            <i class="${achievement.icon}"></i>
-          </div>
+
+    // Update profile info
+    document.getElementById('profileName').textContent = user.name;
+    document.getElementById('profileGrade').textContent = `Grade ${user.grade} Student`;
+    document.getElementById('streakCount').textContent = user.streak;
+    document.getElementById('pointsCount').textContent = user.points;
+    document.getElementById('badgesCount').textContent = user.badges.length;
+
+    // Update form fields
+    document.getElementById('fullName').value = user.name;
+    document.getElementById('email').value = user.email;
+    document.getElementById('gradeLevel').value = user.grade;
+    document.getElementById('languagePreference').value = user.language;
+  } catch {
+    window.location.href = '/index.html';
+    return;
+  }
+
+  // Render badges
+  fetch('/data/user.json')
+    .then(response => response.json())
+    .then(user => {
+      const badgesGrid = document.getElementById('badgesGrid');
+      badgesGrid.innerHTML = user.badges.map(badge => `
+        <div class="badge-card">
+          <div class="badge-icon"><i class="fas fa-award"></i></div>
           <div class="badge-info">
-            <h3>${achievement.name}</h3>
-            <p>${achievement.description}</p>
-            <small>Earned on ${new Date(achievement.date).toLocaleDateString()}</small>
+            <h3>${badge.name}</h3>
+            <p>${badge.description}</p>
+            <small>Earned on ${new Date(badge.date).toLocaleDateString()}</small>
           </div>
-        `;
-        badgesGrid.appendChild(badge);
-      });
-    }
-  
-    // Set up event listeners
-    function setupEventListeners() {
-      // Profile form submission
-      profileForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Update user data
-        userData.name = fullName.value;
-        userData.grade = gradeLevel.value;
-        userData.language = languagePreference.value;
-        
-        // Update displayed name
-        document.getElementById('profileName').textContent = userData.name;
-        
-        // Show success message
-        showNotification('Profile updated successfully!', 'success');
-        
-        // Save to localStorage
-        localStorage.setItem('userProfile', JSON.stringify({
-          name: userData.name,
-          grade: userData.grade,
-          language: userData.language
-        }));
-      });
-      
-      // Tab switching
-      tabBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-          const tabId = this.dataset.tab;
-          
-          // Update active tab button
-          tabBtns.forEach(btn => btn.classList.remove('active'));
-          this.classList.add('active');
-          
-          // Show corresponding tab content
-          tabContents.forEach(content => {
-            content.style.display = content.id === `${tabId}Tab` ? 'block' : 'none';
-          });
-          
-          // Load content if needed
-          if (tabId === 'completed') {
-            loadCompletedLessons();
-          } else if (tabId === 'quizzes') {
-            loadQuizResults();
-          }
-        });
-      });
-      
-      // Avatar edit button
-      document.querySelector('.avatar-edit').addEventListener('click', function(e) {
-        e.preventDefault();
-        // In a real app, this would open a file picker for avatar upload
-        showNotification('Avatar upload functionality coming soon!', 'info');
-      });
-    }
-  
-    // Load completed lessons (would be fetched from server in real app)
-    function loadCompletedLessons() {
+        </div>
+      `).join('');
+    })
+    .catch(error => {
+      console.error('Error fetching badges:', error);
+      document.getElementById('badgesGrid').innerHTML = '<p>Error loading badges.</p>';
+    });
+
+  // Render learning history
+  fetch('/data/activity.json')
+    .then(response => response.json())
+    .then(activities => {
+      const recentTab = document.getElementById('recentTab');
       const completedTab = document.getElementById('completedTab');
-      completedTab.innerHTML = `
-        <div class="completed-lesson">
-          <i class="fas fa-book"></i>
-          <div>
-            <h3>Math: Addition Basics</h3>
-            <p>Completed on 15/06/2023</p>
-          </div>
-          <button class="btn btn-outline">Review</button>
-        </div>
-        <!-- More lessons would be added here -->
-      `;
-    }
-  
-    // Load quiz results (would be fetched from server in real app)
-    function loadQuizResults() {
       const quizzesTab = document.getElementById('quizzesTab');
-      quizzesTab.innerHTML = `
-        <div class="quiz-result">
-          <div class="quiz-info">
-            <h3>Math: Addition Quiz</h3>
-            <p>Completed on 15/06/2023</p>
-          </div>
-          <div class="quiz-score">
-            <div class="score-circle small">85%</div>
-            <button class="btn btn-outline">View Details</button>
+
+      recentTab.innerHTML = activities.map(activity => `
+        <div class="activity-item">
+          <i class="fas ${activity.type === 'quiz' ? 'fa-check-circle success' : activity.type === 'lesson' ? 'fa-book-open primary' : 'fa-award accent'}"></i>
+          <div>
+            <p>${activity.title}</p>
+            <small>${new Date(activity.timestamp).toLocaleString()}</small>
           </div>
         </div>
-        <!-- More quiz results would be added here -->
-      `;
-    }
-  
-    // Initialize the profile page
-    initProfile();
+      `).join('');
+
+      completedTab.innerHTML = activities
+        .filter(activity => activity.type === 'lesson' && activity.status === 'In Progress')
+        .map(activity => `
+          <div class="activity-item">
+            <i class="fas fa-book-open primary"></i>
+            <div>
+              <p>${activity.title}</p>
+              <small>${new Date(activity.timestamp).toLocaleString()}</small>
+            </div>
+          </div>
+        `).join('');
+
+      quizzesTab.innerHTML = activities
+        .filter(activity => activity.type === 'quiz')
+        .map(activity => `
+          <div class="activity-item">
+            <i class="fas fa-check-circle success"></i>
+            <div>
+              <p>${activity.title}</p>
+              <small>${new Date(activity.timestamp).toLocaleString()}</small>
+            </div>
+            <span class="badge success">${activity.score}%</span>
+          </div>
+        `).join('');
+    })
+    .catch(error => {
+      console.error('Error fetching history:', error);
+      document.getElementById('recentTab').innerHTML = '<p>Error loading history.</p>';
+    });
+
+  // Tab switching
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.style.display = 'none');
+      
+      btn.classList.add('active');
+      document.getElementById(`${btn.dataset.tab}Tab`).style.display = 'block';
+    });
   });
+
+  // Handle form submission
+  document.getElementById('profileForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const updatedUser = {
+      name: document.getElementById('fullName').value,
+      email: document.getElementById('email').value,
+      grade: document.getElementById('gradeLevel').value,
+      language: document.getElementById('languagePreference').value
+    };
+    // Update user data (mock for now)
+    localStorage.setItem('user', JSON.stringify({ ...JSON.parse(localStorage.getItem('user') || '{}'), ...updatedUser }));
+    alert('Profile updated successfully!');
+  });
+});

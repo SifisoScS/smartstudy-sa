@@ -1,0 +1,19 @@
+[
+    {
+      "type": "quiz",
+      "title": "Completed Math Quiz - Chapter 2",
+      "timestamp": "2025-04-18T10:30:00",
+      "score": 85
+    },
+    {
+      "type": "lesson",
+      "title": "Started English Lesson - Reading",
+      "timestamp": "2025-04-17T16:15:00",
+      "status": "In Progress"
+    },
+    {
+      "type": "badge",
+      "title": "Earned 'Quick Learner' Badge",
+      "timestamp": "2025-04-16T09:00:00"
+    }
+  ]

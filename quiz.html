@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz - SmartStudy SA</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <div class="logo">
+        <h1><i class="fas fa-graduation-cap"></i> SIFISO</h1>
+      </div>
+      <nav class="nav-links">
+        <a href="/dashboard.html"><i class="fas fa-home"></i> Home</a>
+        <a href="/profile.html"><i class="fas fa-user"></i> Profile</a>
+        <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button>
+      </nav>
+    </div>
+  </header>
+  
+  <main class="quiz-page">
+    <div id="quizContainer" class="card">
+      <div class="quiz-header">
+        <h1 id="quizTitle">Loading Quiz...</h1>
+        <div class="quiz-meta">
+          <span id="highScore">High Score: N/A</span>
+          <span id="timeRemaining"><i class="fas fa-clock"></i> 15:00</span>
+        </div>
+      </div>
+      
+      <div id="questionContainer" class="quiz-content">
+        <!-- Questions will be loaded here -->
+      </div>
+      
+      <div class="quiz-navigation">
+        <button id="prevQuestion" class="btn btn-outline" disabled>
+          <i class="fas fa-arrow-left"></i> Previous
+        </button>
+        <button id="nextQuestion" class="btn">
+          Next <i class="fas fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+    
+    <div id="resultsContainer" class="card" style="display: none;">
+      <h2>Quiz Results</h2>
+      <div class="result-card">
+        <div class="result-score">
+          <div class="score-circle">
+            <span id="finalScore">0</span>%
+          </div>
+          <p>You answered <strong id="correctCount">0</strong> questions correctly</p>
+        </div>
+        <div class="result-feedback">
+          <h3 id="resultTitle"></h3>
+          <p id="resultDescription"></p>
+        </div>
+      </div>
+      
+      <div class="result-actions">
+        <a href="/quizzes.html" class="btn btn-outline">
+          <i class="fas fa-list"></i> Back to Quizzes
+        </a>
+        <button id="retakeQuiz" class="btn">
+          <i class="fas fa-redo"></i> Retake Quiz
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 SmartStudy SA. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/terms.html">Terms of Service</a>
+        <a href="/languages.html">Language Settings</a>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/js/quiz.js"></script>
+</body>
+</html>
