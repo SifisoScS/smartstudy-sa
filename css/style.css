@@ -1,0 +1,59 @@
+/* css/style.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f4f8;
+  color: #333;
+}
+
+header {
+  background-color: #004f66;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+.subjects {
+  padding: 2rem;
+  text-align: center;
+}
+
+.subject-buttons button {
+  margin: 0.5rem;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  background-color: #007c91;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.subject-buttons button:hover {
+  background-color: #005c6e;
+}
+
+.content {
+  padding: 2rem;
+}
+
+.lesson-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.lesson-list li {
+  padding: 1rem;
+  background-color: #ffffff;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.lesson-list a {
+  text-decoration: none;
+  color: #004f66;
+  margin-left: 1rem;
+  font-weight: bold;
+}

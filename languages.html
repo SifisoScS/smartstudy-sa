@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Choose Language - SmartStudy SA</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <h1>SIFISO</h1>
+    <p>Choose Language</p>
+  </header>
+  <main class="content">
+    <select id="language-select">
+      <option value="en">English</option>
+      <option value="zu">IsiZulu</option>
+      <option value="xh">IsiXhosa</option>
+      <option value="af">Afrikaans</option>
+      <!-- Add remaining official languages -->
+    </select>
+    <p id="language-note"></p>
+  </main>
+  <script>
+    document.getElementById('language-select').addEventListener('change', function() {
+      const lang = this.value;
+      document.getElementById('language-note').innerText = 'You selected: ' + lang;
+    });
+  </script>
+</body>
+</html>

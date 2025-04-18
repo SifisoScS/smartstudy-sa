@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Math Quiz - Grade 4</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Math Quiz</h1>
+    <p>Grade 4</p>
+  </header>
+  <main class="content">
+    <form id="quiz-form">
+      <p>1. What is 5 + 3?</p>
+      <input type="radio" name="q1" value="6"> 6<br>
+      <input type="radio" name="q1" value="8"> 8<br>
+      <input type="radio" name="q1" value="10"> 10<br>
+      <button type="submit">Submit</button>
+    </form>
+    <p id="quiz-result"></p>
+  </main>
+  <script>
+    document.getElementById('quiz-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const result = document.querySelector('input[name="q1"]:checked').value;
+      document.getElementById('quiz-result').innerText = result === '8' ? 'Correct!' : 'Try again.';
+    });
+  </script>
+</body>
+</html>
