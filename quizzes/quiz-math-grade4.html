@@ -1,31 +1,129 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Math Quiz - Grade 4</title>
+  <title>Math Quiz - Grade 4 | SmartStudy SA</title>
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
   <header>
-    <h1>Math Quiz</h1>
-    <p>Grade 4</p>
+    <div class="navbar">
+      <div class="logo">
+        <h1><i class="fas fa-graduation-cap"></i> SIFISO</h1>
+      </div>
+      <nav class="nav-links">
+        <a href="../dashboard.html"><i class="fas fa-home"></i> Home</a>
+        <a href="../profile.html"><i class="fas fa-user"></i> Profile</a>
+        <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button>
+      </nav>
+    </div>
   </header>
-  <main class="content">
-    <form id="quiz-form">
-      <p>1. What is 5 + 3?</p>
-      <input type="radio" name="q1" value="6"> 6<br>
-      <input type="radio" name="q1" value="8"> 8<br>
-      <input type="radio" name="q1" value="10"> 10<br>
-      <button type="submit">Submit</button>
+  
+  <main class="quiz-container">
+    <div class="quiz-header card">
+      <h1>Grade 4 Math: Addition</h1>
+      <div class="quiz-meta">
+        <span class="difficulty easy"><i class="fas fa-star"></i> Easy</span>
+        <span class="questions"><i class="fas fa-question-circle"></i> 10 Questions</span>
+        <span class="time"><i class="fas fa-clock"></i> 15 min</span>
+      </div>
+      <div class="progress-container">
+        <div class="progress-bar">
+          <div class="progress" id="quizProgress" style="width: 0%"></div>
+        </div>
+        <span id="progressText">0/10 questions</span>
+      </div>
+    </div>
+
+    <form id="quizForm" class="quiz-form card">
+      <div class="quiz-question active" id="q1">
+        <div class="question-header">
+          <span class="question-number">Question 1 of 10</span>
+          <span class="timer"><i class="fas fa-clock"></i> <span id="timeRemaining">15:00</span></span>
+        </div>
+        <p class="question-text">What is 5 + 3?</p>
+        <div class="options-grid">
+          <label class="option-card">
+            <input type="radio" name="q1" value="6" required>
+            <span class="option-content">
+              <span class="option-letter">A</span>
+              <span class="option-text">6</span>
+            </span>
+          </label>
+          <label class="option-card correct-answer">
+            <input type="radio" name="q1" value="8" required>
+            <span class="option-content">
+              <span class="option-letter">B</span>
+              <span class="option-text">8</span>
+            </span>
+          </label>
+          <label class="option-card">
+            <input type="radio" name="q1" value="10" required>
+            <span class="option-content">
+              <span class="option-letter">C</span>
+              <span class="option-text">10</span>
+            </span>
+          </label>
+          <label class="option-card">
+            <input type="radio" name="q1" value="7" required>
+            <span class="option-content">
+              <span class="option-letter">D</span>
+              <span class="option-text">7</span>
+            </span>
+          </label>
+        </div>
+        <div class="question-navigation">
+          <button type="button" class="btn btn-outline" disabled>Previous</button>
+          <button type="button" class="btn next-question">Next</button>
+        </div>
+      </div>
+
+      <!-- Additional questions would follow the same pattern -->
+      
+      <div class="quiz-results" id="quizResults" style="display: none;">
+        <h2>Quiz Results</h2>
+        <div class="result-card">
+          <div class="result-score">
+            <div class="score-circle">
+              <span id="finalScore">85</span>%
+            </div>
+            <p>You scored <strong id="correctCount">8</strong> out of <strong>10</strong></p>
+          </div>
+          <div class="result-feedback">
+            <h3 id="resultTitle">Great Job!</h3>
+            <p id="resultDescription">You're doing well with addition problems. Keep practicing to improve your speed!</p>
+          </div>
+        </div>
+        
+        <div class="result-actions">
+          <button type="button" class="btn btn-outline" id="reviewQuiz">
+            <i class="fas fa-book-open"></i> Review Answers
+          </button>
+          <a href="../quizzes.html" class="btn">
+            <i class="fas fa-list"></i> Back to Quizzes
+          </a>
+          <button type="button" class="btn" id="retakeQuiz">
+            <i class="fas fa-redo"></i> Retake Quiz
+          </button>
+        </div>
+      </div>
     </form>
-    <p id="quiz-result"></p>
   </main>
-  <script>
-    document.getElementById('quiz-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const result = document.querySelector('input[name="q1"]:checked').value;
-      document.getElementById('quiz-result').innerText = result === '8' ? 'Correct!' : 'Try again.';
-    });
-  </script>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2023 SmartStudy SA. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="../languages.html">Language Settings</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/app.js"></script>
+  <script src="../js/quiz.js"></script>
 </body>
 </html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Profile - SmartStudy SA</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <div class="logo">
+        <h1><i class="fas fa-graduation-cap"></i> SIFISO</h1>
+      </div>
+      <nav class="nav-links">
+        <a href="dashboard.html"><i class="fas fa-home"></i> Home</a>
+        <a href="profile.html" class="active"><i class="fas fa-user"></i> Profile</a>
+        <a href="community.html"><i class="fas fa-users"></i> Community</a>
+        <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button>
+      </nav>
+    </div>
+  </header>
+  
+  <main>
+    <section class="profile-header">
+      <div class="card">
+        <div class="profile-banner">
+          <div class="avatar-container">
+            <img src="assets/images/user-avatar.png" alt="Profile picture" class="profile-avatar">
+            <button class="avatar-edit"><i class="fas fa-camera"></i></button>
+          </div>
+          <div class="profile-info">
+            <h1 id="profileName">Learner Name</h1>
+            <p class="profile-grade">Grade 4 Student</p>
+            <div class="profile-stats">
+              <div class="stat-item">
+                <strong id="streakCount">5</strong>
+                <span>Day Streak</span>
+              </div>
+              <div class="stat-item">
+                <strong id="pointsCount">1,250</strong>
+                <span>Points</span>
+              </div>
+              <div class="stat-item">
+                <strong id="badgesCount">8</strong>
+                <span>Badges</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="profile-details">
+      <div class="card">
+        <h2>Account Information</h2>
+        <form id="profileForm">
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" class="form-control" value="Learner Name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" class="form-control" value="learner@example.com">
+          </div>
+          <div class="form-group">
+            <label for="gradeLevel">Grade Level</label>
+            <select id="gradeLevel" class="form-control">
+              <option value="4">Grade 4</option>
+              <option value="5">Grade 5</option>
+              <option value="6">Grade 6</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="languagePreference">Preferred Language</label>
+            <select id="languagePreference" class="form-control">
+              <option value="en">English</option>
+              <option value="zu">IsiZulu</option>
+              <option value="xh">IsiXhosa</option>
+              <option value="af">Afrikaans</option>
+            </select>
+          </div>
+          <button type="submit" class="btn">Save Changes</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="achievements">
+      <div class="card">
+        <h2>Your Achievements</h2>
+        <div class="badges-grid" id="badgesGrid">
+          <!-- Badges will be loaded here by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <section class="learning-history">
+      <div class="card">
+        <h2>Learning History</h2>
+        <div class="history-tabs">
+          <button class="tab-btn active" data-tab="recent">Recent Activity</button>
+          <button class="tab-btn" data-tab="completed">Completed Lessons</button>
+          <button class="tab-btn" data-tab="quizzes">Quiz Results</button>
+        </div>
+        
+        <div class="tab-content active" id="recentTab">
+          <!-- Recent activity will be loaded here -->
+        </div>
+        
+        <div class="tab-content" id="completedTab" style="display: none;">
+          <!-- Completed lessons will be loaded here -->
+        </div>
+        
+        <div class="tab-content" id="quizzesTab" style="display: none;">
+          <!-- Quiz results will be loaded here -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2023 SmartStudy SA. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="languages.html">Language Settings</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+  <script src="js/profile.js"></script>
+</body>
+</html>

@@ -3,25 +3,99 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SmartStudy SA - Interactive learning platform for South African students">
   <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <title>SIFISO - SmartStudy SA</title>
 </head>
 <body>
   <header>
-    <h1>SIFISO</h1>
-    <p>SmartStudy SA – Learning Platform</p>
+    <div class="navbar">
+      <div class="logo">
+        <h1><i class="fas fa-graduation-cap"></i> SIFISO</h1>
+      </div>
+      <nav class="nav-links">
+        <a href="dashboard.html"><i class="fas fa-home"></i> Home</a>
+        <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+        <a href="community.html"><i class="fas fa-users"></i> Community</a>
+        <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button>
+      </nav>
+    </div>
   </header>
+  
   <main>
-    <section class="subjects">
-      <h2>Select an Option</h2>
-      <div class="subject-buttons">
-        <a href="lessons.html"><button>Download Lessons</button></a>
-        <a href="quizzes.html"><button>Take Quizzes</button></a>
-        <a href="audio.html"><button>Listen to Lessons</button></a>
-        <a href="languages.html"><button>Choose Language</button></a>
+    <section class="welcome-banner">
+      <div class="card">
+        <h2>Welcome to SmartStudy SA</h2>
+        <p>Your personalized learning platform for South African students.</p>
+      </div>
+    </section>
+
+    <section class="quick-access">
+      <h2>Quick Access</h2>
+      <div class="card-grid">
+        <a href="lessons.html" class="card">
+          <i class="fas fa-book-open fa-3x"></i>
+          <h3>Lessons</h3>
+          <p>Download or view interactive lessons</p>
+        </a>
+        
+        <a href="quizzes.html" class="card">
+          <i class="fas fa-question-circle fa-3x"></i>
+          <h3>Quizzes</h3>
+          <p>Test your knowledge with interactive quizzes</p>
+        </a>
+        
+        <a href="audio.html" class="card">
+          <i class="fas fa-headphones fa-3x"></i>
+          <h3>Audio Lessons</h3>
+          <p>Listen to lessons on the go</p>
+        </a>
+        
+        <a href="videos.html" class="card">
+          <i class="fas fa-video fa-3x"></i>
+          <h3>Video Lessons</h3>
+          <p>Watch engaging video content</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="progress-section">
+      <div class="card">
+        <h2>Your Progress</h2>
+        <div class="progress-container">
+          <div class="subject-progress">
+            <h4>Mathematics</h4>
+            <div class="progress-bar">
+              <div class="progress" style="width: 65%"></div>
+            </div>
+            <span>65% complete</span>
+          </div>
+          <div class="subject-progress">
+            <h4>English</h4>
+            <div class="progress-bar">
+              <div class="progress" style="width: 42%"></div>
+            </div>
+            <span>42% complete</span>
+          </div>
+        </div>
+        <a href="dashboard.html" class="btn">View Full Dashboard</a>
       </div>
     </section>
   </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 SmartStudy SA. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="languages.html">Language Settings</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
 </body>
 </html>
