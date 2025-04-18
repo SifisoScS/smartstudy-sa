@@ -1,0 +1,114 @@
+[
+    {
+      "subject": "English",
+      "icon": "📖",
+      "class": "english",
+      "grades": [
+        {
+          "grade": 8,
+          "lessons": [
+            { "title": "Parts of Speech", "description": "Learn about nouns, verbs, and adjectives.", "url": "/lessons/english/gr8/parts-of-speech.pdf" },
+            { "title": "Comprehension Skills", "description": "Practice reading and understanding texts.", "url": "/lessons/english/gr8/comprehension.pdf" }
+          ]
+        },
+        {
+          "grade": 9,
+          "lessons": [
+            { "title": "Figurative Language", "description": "Explore metaphors, similes, and more.", "url": "/lessons/english/gr9/figurative-language.pdf" },
+            { "title": "Essay Writing", "description": "Master the art of writing essays.", "url": "/lessons/english/gr9/essay-writing.pdf" }
+          ]
+        },
+        {
+          "grade": 10,
+          "lessons": [
+            { "title": "Poetry Analysis", "description": "Analyze poems with confidence.", "url": "/lessons/english/gr10/poetry-analysis.pdf" },
+            { "title": "Argumentative Writing", "description": "Write persuasive arguments.", "url": "/lessons/english/gr10/argumentative-writing.pdf" }
+          ]
+        }
+      ]
+    },
+    {
+      "subject": "Mathematics",
+      "icon": "➕",
+      "class": "maths",
+      "grades": [
+        {
+          "grade": 8,
+          "lessons": [
+            { "title": "Algebraic Expressions", "description": "Simplify and solve expressions.", "url": "/lessons/maths/gr8/algebraic-expressions.pdf" },
+            { "title": "Geometric Shapes", "description": "Explore properties of shapes.", "url": "/lessons/maths/gr8/geometric-shapes.pdf" }
+          ]
+        },
+        {
+          "grade": 9,
+          "lessons": [
+            { "title": "Linear Equations", "description": "Solve equations with one variable.", "url": "/lessons/maths/gr9/linear-equations.pdf" },
+            { "title": "Probability", "description": "Understand chance and outcomes.", "url": "/lessons/maths/gr9/probability.pdf" }
+          ]
+        },
+        {
+          "grade": 10,
+          "lessons": [
+            { "title": "Quadratic Equations", "description": "Solve using factoring and formulas.", "url": "/lessons/maths/gr10/quadratic-equations.pdf" },
+            { "title": "Trigonometry Basics", "description": "Introduction to sine, cosine, and tangent.", "url": "/lessons/maths/gr10/trigonometry-basics.pdf" }
+          ]
+        }
+      ]
+    },
+    {
+      "subject": "Science",
+      "icon": "🔬",
+      "class": "science",
+      "grades": [
+        {
+          "grade": 8,
+          "lessons": [
+            { "title": "Cells and Organisms", "description": "Learn about living systems.", "url": "/lessons/science/gr8/cells.pdf" },
+            { "title": "Forces and Motion", "description": "Understand Newton’s laws.", "url": "/lessons/science/gr8/forces.pdf" }
+          ]
+        },
+        {
+          "grade": 9,
+          "lessons": [
+            { "title": "Chemical Reactions", "description": "Explore types of reactions.", "url": "/lessons/science/gr9/chemical-reactions.pdf" },
+            { "title": "Electricity", "description": "Learn about circuits and current.", "url": "/lessons/science/gr9/electricity.pdf" }
+          ]
+        },
+        {
+          "grade": 10,
+          "lessons": [
+            { "title": "Acids and Bases", "description": "Understand pH and reactions.", "url": "/lessons/science/gr10/acids-bases.pdf" },
+            { "title": "Mechanics", "description": "Study motion and energy.", "url": "/lessons/science/gr10/mechanics.pdf" }
+          ]
+        }
+      ]
+    },
+    {
+      "subject": "Technology",
+      "icon": "💻",
+      "class": "technology",
+      "grades": [
+        {
+          "grade": 8,
+          "lessons": [
+            { "title": "Introduction to Coding", "description": "Learn basic programming concepts.", "url": "/lessons/tech/gr8/coding-intro.pdf" },
+            { "title": "Design Process", "description": "Understand problem-solving steps.", "url": "/lessons/tech/gr8/design-process.pdf" }
+          ]
+        },
+        {
+          "grade": 9,
+          "lessons": [
+            { "title": "Web Development Basics", "description": "Create simple websites.", "url": "/lessons/tech/gr9/web-dev.pdf" },
+            { "title": "Robotics Fundamentals", "description": "Explore robots and automation.", "url": "/lessons/tech/gr9/robotics.pdf" }
+          ]
+        },
+        {
+          "grade": 10,
+          "lessons": [
+            { "title": "Data and Databases", "description": "Learn about data storage.", "url": "/lessons/tech/gr10/databases.pdf" },
+            { "title": "App Development", "description": "Build a simple mobile app.", "url": "/lessons/tech/gr10/app-dev.pdf" }
+          ]
+        }
+      ]
+    }
+  ]

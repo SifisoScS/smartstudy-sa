@@ -1,21 +1,66 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Downloadable Lessons - SmartStudy SA</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SIFISO SmartStudy SA - Interactive lessons for South African students">
+  <meta name="theme-color" content="#4a6fa5">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="icon" href="/assets/images/favicon.ico">
+  <title>SIFISO - Lessons</title>
 </head>
 <body>
-  <header>
-    <h1>SIFISO</h1>
-    <p>Downloadable Lessons</p>
-  </header>
-  <main class="content">
-    <h2>Grade 4</h2>
-    <ul class="lesson-list">
-      <li><strong>Math</strong> <a href="lessons/math-grade4.pdf" download>Download PDF</a></li>
-      <li><strong>English</strong> <a href="lessons/english-grade4.pdf" download>Download PDF</a></li>
-    </ul>
-  </main>
+  <div class="page-wrapper">
+    <header>
+      <div class="navbar">
+        <div class="logo">
+          <h1><i class="fas fa-graduation-cap"></i> SIFISO</h1>
+        </div>
+        <nav class="nav-links">
+          <a href="/index.html"><i class="fas fa-home"></i> Home</a>
+          <a href="/dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+          <a href="/profile.html"><i class="fas fa-user"></i> Profile</a>
+          <a href="/community.html"><i class="fas fa-users"></i> Community</a>
+          <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button>
+        </nav>
+      </div>
+    </header>
+    
+    <main class="main-content">
+      <section class="lessons-section">
+        <h2>Explore Lessons</h2>
+        <div class="subject-grid" id="subject-grid">
+          <!-- Subject cards will be rendered here -->
+        </div>
+        <div class="grade-selector" id="grade-selector" style="display: none;">
+          <h3>Select Grade</h3>
+          <select id="grade-select">
+            <option value="8">Grade 8</option>
+            <option value="9">Grade 9</option>
+            <option value="10">Grade 10</option>
+          </select>
+        </div>
+        <div class="lesson-list" id="lesson-list" style="display: none;">
+          <h3>Lessons</h3>
+          <div id="lessons-container"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-links">
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/terms.html">Terms of Service</a>
+        <a href="/languages.html">Language Settings</a>
+      </div>
+      <p>© 2025 SIFISO SmartStudy SA. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script src="/js/app.js"></script>
+  <script src="/js/lessons.js"></script>
 </body>
 </html>

@@ -1,0 +1,30 @@
+[
+    {
+      "title": "Lessons",
+      "icon": "📚",
+      "url": "/lessons.html",
+      "description": "Download or view interactive lessons",
+      "class": "lessons"
+    },
+    {
+      "title": "Quizzes",
+      "icon": "✍️",
+      "url": "/quizzes.html",
+      "description": "Test your knowledge with interactive quizzes",
+      "class": "quizzes"
+    },
+    {
+      "title": "Audio Lessons",
+      "icon": "🎧",
+      "url": "/audio.html",
+      "description": "Listen to lessons on the go",
+      "class": "audio"
+    },
+    {
+      "title": "Video Lessons",
+      "icon": "🎬",
+      "url": "/videos.html",
+      "description": "Watch engaging video content",
+      "class": "video"
+    }
+  ]

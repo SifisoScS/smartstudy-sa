@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quizzes - SmartStudy SA</title>
+  <title>Privacy Policy - SmartStudy SA</title>
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -22,9 +22,9 @@
   </header>
   
   <main>
-    <section class="quiz-container">
-      <h2>Available Quizzes</h2>
-      <div id="quiz-list" class="card-grid"></div>
+    <section class="card">
+      <h2>Privacy Policy</h2>
+      <p>Our privacy policy details will be added here.</p>
     </section>
   </main>
 
@@ -39,32 +39,6 @@
     </div>
   </footer>
 
-  <script type="module">
-    import { authService } from '/js/auth.js';
-    
-    // Check authentication
-    authService.getCurrentUser().catch(() => {
-      window.location.href = '/index.html';
-    });
-
-    // Fetch and render quizzes
-    fetch('/data/quizzes.json')
-      .then(response => response.json())
-      .then(quizzes => {
-        const quizList = document.getElementById('quiz-list');
-        quizList.innerHTML = quizzes.map(quiz => `
-          <div class="card">
-            <h3>${quiz.title}</h3>
-            <p>Subject: ${quiz.subject}</p>
-            <p>Questions: ${quiz.questions.length}</p>
-            <a href="/quiz.html?id=${quiz.id}" class="btn">Start Quiz</a>
-          </div>
-        `).join('');
-      })
-      .catch(error => {
-        console.error('Error fetching quizzes:', error);
-        document.getElementById('quiz-list').innerHTML = '<p>Error loading quizzes.</p>';
-      });
-  </script>
+  <script src="/js/app.js"></script>
 </body>
 </html>

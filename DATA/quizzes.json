@@ -1,0 +1,33 @@
+[
+    {
+      "id": 1,
+      "title": "Mathematics Quiz 1",
+      "subject": "Mathematics",
+      "timeLimit": 900,
+      "questions": [
+        {
+          "text": "What is 2 + 2?",
+          "options": ["2", "3", "4", "5"],
+          "correct": 2
+        },
+        {
+          "text": "What is 5 × 3?",
+          "options": ["10", "15", "20", "25"],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "English Quiz 1",
+      "subject": "English",
+      "timeLimit": 900,
+      "questions": [
+        {
+          "text": "What is a synonym for 'happy'?",
+          "options": ["Sad", "Joyful", "Angry", "Tired"],
+          "correct": 1
+        }
+      ]
+    }
+  ]

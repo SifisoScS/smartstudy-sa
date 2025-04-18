@@ -1,0 +1,14 @@
+[
+    {
+      "id": 1,
+      "title": "Complete Math Chapter 3",
+      "progress": 70,
+      "icon": "fas fa-trophy"
+    },
+    {
+      "id": 2,
+      "title": "Read 5 English Stories",
+      "progress": 40,
+      "icon": "fas fa-book"
+    }
+  ]

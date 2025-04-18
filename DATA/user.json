@@ -1,0 +1,13 @@
+{
+    "id": 1,
+    "name": "Learner Name",
+    "email": "learner@example.com",
+    "grade": "4",
+    "language": "en",
+    "streak": 5,
+    "points": 1250,
+    "badges": [
+      { "id": 1, "name": "Quick Learner", "description": "Completed 5 lessons in a day", "date": "2025-04-15" },
+      { "id": 2, "name": "Math Master", "description": "Scored 90%+ in a Math quiz", "date": "2025-04-14" }
+    ]
+  }

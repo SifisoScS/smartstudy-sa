@@ -1,24 +1,20 @@
-// auth.js - User session management
-
-import { apiService } from './apiService';
-
+// js/auth.js
 class AuthService {
   constructor() {
-    this.currentUser = null;
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser')) || null;
     this.token = localStorage.getItem('authToken') || null;
   }
 
   async login(email, password) {
-    // In a real app, this would call your authentication API
     try {
-      // Mock authentication - in reality, verify with backend
-      const user = await apiService.getUser(1); // Using mock user ID 1
+      const response = await fetch('/data/user.json');
+      const user = await response.json();
       
-      if (user.email === email) { // Simple mock validation
+      if (user.email === email && password === 'password') { // Mock password check
         this.currentUser = user;
         this.token = 'mock-auth-token';
         localStorage.setItem('authToken', this.token);
-        localStorage.setItem('userId', user.id);
+        localStorage.setItem('currentUser', JSON.stringify(user));
         return user;
       }
       throw new Error('Invalid credentials');
@@ -32,7 +28,7 @@ class AuthService {
     this.currentUser = null;
     this.token = null;
     localStorage.removeItem('authToken');
-    localStorage.removeItem('userId');
+    localStorage.removeItem('currentUser');
   }
 
   async getCurrentUser() {
@@ -42,17 +38,17 @@ class AuthService {
     
     if (this.token) {
       try {
-        const userId = localStorage.getItem('userId');
-        if (userId) {
-          this.currentUser = await apiService.getUser(parseInt(userId));
-          return this.currentUser;
+        const user = JSON.parse(localStorage.getItem('currentUser'));
+        if (user) {
+          this.currentUser = user;
+          return user;
         }
       } catch (error) {
         console.error('Failed to fetch user:', error);
         this.logout();
       }
     }
-    return null;
+    throw new Error('No user logged in');
   }
 
   isAuthenticated() {

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Profile - SmartStudy SA</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -14,9 +14,9 @@
         <h1><i class="fas fa-graduation-cap"></i> SIFISO</h1>
       </div>
       <nav class="nav-links">
-        <a href="dashboard.html"><i class="fas fa-home"></i> Home</a>
-        <a href="profile.html" class="active"><i class="fas fa-user"></i> Profile</a>
-        <a href="community.html"><i class="fas fa-users"></i> Community</a>
+        <a href="/dashboard.html"><i class="fas fa-home"></i> Home</a>
+        <a href="/profile.html" class="active"><i class="fas fa-user"></i> Profile</a>
+        <a href="/community.html"><i class="fas fa-users"></i> Community</a>
         <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button>
       </nav>
     </div>
@@ -27,23 +27,23 @@
       <div class="card">
         <div class="profile-banner">
           <div class="avatar-container">
-            <img src="assets/images/user-avatar.png" alt="Profile picture" class="profile-avatar">
+            <img src="/assets/images/user-avatar.png" alt="Profile picture" class="profile-avatar">
             <button class="avatar-edit"><i class="fas fa-camera"></i></button>
           </div>
           <div class="profile-info">
             <h1 id="profileName">Learner Name</h1>
-            <p class="profile-grade">Grade 4 Student</p>
+            <p class="profile-grade" id="profileGrade">Grade 4 Student</p>
             <div class="profile-stats">
               <div class="stat-item">
-                <strong id="streakCount">5</strong>
+                <strong id="streakCount">0</strong>
                 <span>Day Streak</span>
               </div>
               <div class="stat-item">
-                <strong id="pointsCount">1,250</strong>
+                <strong id="pointsCount">0</strong>
                 <span>Points</span>
               </div>
               <div class="stat-item">
-                <strong id="badgesCount">8</strong>
+                <strong id="badgesCount">0</strong>
                 <span>Badges</span>
               </div>
             </div>
@@ -90,7 +90,7 @@
       <div class="card">
         <h2>Your Achievements</h2>
         <div class="badges-grid" id="badgesGrid">
-          <!-- Badges will be loaded here by JavaScript -->
+          <!-- Badges will be loaded here -->
         </div>
       </div>
     </section>
@@ -121,16 +121,15 @@
 
   <footer>
     <div class="footer-content">
-      <p>&copy; 2023 SmartStudy SA. All rights reserved.</p>
+      <p>&copy; 2025 SmartStudy SA. All rights reserved.</p>
       <div class="footer-links">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
-        <a href="languages.html">Language Settings</a>
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/terms.html">Terms of Service</a>
+        <a href="/languages.html">Language Settings</a>
       </div>
     </div>
   </footer>
 
-  <script src="js/app.js"></script>
-  <script src="js/profile.js"></script>
+  <script type="module" src="/js/profile.js"></script>
 </body>
 </html>
