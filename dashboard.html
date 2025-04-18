@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - SmartStudy SA</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <div class="logo">
+        <h1><i class="fas fa-graduation-cap"></i> SIFISO</h1>
+      </div>
+      <nav class="nav-links">
+        <a href="dashboard.html" class="active"><i class="fas fa-home"></i> Home</a>
+        <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+        <a href="community.html"><i class="fas fa-users"></i> Community</a>
+        <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button>
+      </nav>
+    </div>
+  </header>
+  
+  <main>
+    <section class="user-greeting">
+      <div class="card">
+        <div class="user-info">
+          <img src="assets/images/user-avatar.png" alt="User avatar" class="avatar">
+          <div>
+            <h2>Welcome back, <span id="username">Learner</span>!</h2>
+            <p>Keep up the good work. You've completed <strong>12</strong> lessons this week.</p>
+          </div>
+        </div>
+        <div class="streak-counter">
+          <i class="fas fa-fire"></i>
+          <span>5 day streak</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="learning-goals">
+      <div class="card">
+        <h2>Your Learning Goals</h2>
+        <div class="goals-container">
+          <div class="goal-card">
+            <i class="fas fa-trophy"></i>
+            <h3>Complete Math Chapter 3</h3>
+            <div class="progress-bar">
+              <div class="progress" style="width: 70%"></div>
+            </div>
+            <button class="btn btn-outline">Continue</button>
+          </div>
+          <div class="goal-card">
+            <i class="fas fa-book"></i>
+            <h3>Read 5 English Stories</h3>
+            <div class="progress-bar">
+              <div class="progress" style="width: 40%"></div>
+            </div>
+            <button class="btn btn-outline">Continue</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="recent-activity">
+      <div class="card">
+        <h2>Recent Activity</h2>
+        <div class="activity-list">
+          <div class="activity-item">
+            <i class="fas fa-check-circle success"></i>
+            <div>
+              <p>Completed Math Quiz - Chapter 2</p>
+              <small>Today, 10:30 AM</small>
+            </div>
+            <span class="badge success">85%</span>
+          </div>
+          <div class="activity-item">
+            <i class="fas fa-book-open primary"></i>
+            <div>
+              <p>Started English Lesson - Reading</p>
+              <small>Yesterday, 4:15 PM</small>
+            </div>
+            <span class="badge primary">In Progress</span>
+          </div>
+          <div class="activity-item">
+            <i class="fas fa-award accent"></i>
+            <div>
+              <p>Earned "Quick Learner" Badge</p>
+              <small>2 days ago</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="recommended-content">
+      <div class="card">
+        <h2>Recommended For You</h2>
+        <div class="content-grid">
+          <a href="lessons/math-grade4-ch3.html" class="content-card">
+            <img src="assets/images/math-lesson.jpg" alt="Math lesson">
+            <h3>Math: Multiplication</h3>
+            <p>Chapter 3 - Interactive Lesson</p>
+            <div class="difficulty easy">Easy</div>
+          </a>
+          <a href="videos/english-story.html" class="content-card">
+            <img src="assets/images/english-video.jpg" alt="English video">
+            <h3>English: Story Time</h3>
+            <p>Video Lesson with Quiz</p>
+            <div class="difficulty medium">Medium</div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2023 SmartStudy SA. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="languages.html">Language Settings</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

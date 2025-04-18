@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community - SmartStudy SA</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <div class="logo">
+        <h1><i class="fas fa-graduation-cap"></i> SIFISO</h1>
+      </div>
+      <nav class="nav-links">
+        <a href="dashboard.html"><i class="fas fa-home"></i> Home</a>
+        <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+        <a href="community.html" class="active"><i class="fas fa-users"></i> Community</a>
+        <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button>
+      </nav>
+    </div>
+  </header>
+  
+  <main>
+    <section class="community-header">
+      <div class="card">
+        <h1>Learning Community</h1>
+        <p>Connect with other learners, ask questions, and share knowledge</p>
+      </div>
+    </section>
+
+    <section class="community-features">
+      <div class="card">
+        <div class="feature-tabs">
+          <button class="feature-tab active" data-tab="discussions">Discussions</button>
+          <button class="feature-tab" data-tab="study-groups">Study Groups</button>
+          <button class="feature-tab" data-tab="ask-teacher">Ask a Teacher</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="discussion-forum">
+      <div class="card">
+        <div class="forum-header">
+          <h2>Recent Discussions</h2>
+          <button class="btn" id="newTopicBtn"><i class="fas fa-plus"></i> New Topic</button>
+        </div>
+        
+        <div class="topic-list">
+          <div class="topic-card">
+            <div class="topic-author">
+              <img src="assets/images/user1.jpg" alt="User avatar" class="avatar">
+              <span>Lerato M.</span>
+            </div>
+            <div class="topic-content">
+              <h3><a href="#">Need help with math problem</a></h3>
+              <p>I'm stuck on question 5 in chapter 3. Can someone explain how to solve 25 × 4 using the distributive property?</p>
+              <div class="topic-meta">
+                <span><i class="fas fa-comment"></i> 5 replies</span>
+                <span><i class="fas fa-clock"></i> 2 hours ago</span>
+                <span class="tag math">Math</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="topic-card">
+            <div class="topic-author">
+              <img src="assets/images/user2.jpg" alt="User avatar" class="avatar">
+              <span>Thabo K.</span>
+            </div>
+            <div class="topic-content">
+              <h3><a href="#">English story recommendations</a></h3>
+              <p>Does anyone know good English stories for Grade 4 level? I want to practice reading comprehension.</p>
+              <div class="topic-meta">
+                <span><i class="fas fa-comment"></i> 8 replies</span>
+                <span><i class="fas fa-clock"></i> 1 day ago</span>
+                <span class="tag english">English</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="topic-card">
+            <div class="topic-author">
+              <img src="assets/images/user3.jpg" alt="User avatar" class="avatar">
+              <span>Nomsa P.</span>
+            </div>
+            <div class="topic-content">
+              <h3><a href="#">Study tips for science test</a></h3>
+              <p>Our class has a science test next week. What's the best way to study all the plant parts and their functions?</p>
+              <div class="topic-meta">
+                <span><i class="fas fa-comment"></i> 3 replies</span>
+                <span><i class="fas fa-clock"></i> 2 days ago</span>
+                <span class="tag science">Science</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="study-groups" style="display: none;">
+      <div class="card">
+        <h2>Study Groups</h2>
+        <div class="groups-container">
+          <div class="group-card">
+            <div class="group-icon">
+              <i class="fas fa-calculator"></i>
+            </div>
+            <div class="group-info">
+              <h3>Math Wizards</h3>
+              <p>For students who love math challenges</p>
+              <div class="group-meta">
+                <span><i class="fas fa-users"></i> 15 members</span>
+                <span><i class="fas fa-comments"></i> Active daily</span>
+              </div>
+            </div>
+            <button class="btn btn-outline">Join Group</button>
+          </div>
+          
+          <div class="group-card">
+            <div class="group-icon">
+              <i class="fas fa-book"></i>
+            </div>
+            <div class="group-info">
+              <h3>Book Club</h3>
+              <p>Reading and discussing stories together</p>
+              <div class="group-meta">
+                <span><i class="fas fa-users"></i> 22 members</span>
+                <span><i class="fas fa-comments"></i> Active weekly</span>
+              </div>
+            </div>
+            <button class="btn btn-outline">Join Group</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ask-teacher" style="display: none;">
+      <div class="card">
+        <h2>Ask a Teacher</h2>
+        <div class="teacher-card">
+          <img src="assets/images/teacher1.jpg" alt="Teacher" class="teacher-avatar">
+          <div class="teacher-info">
+            <h3>Mr. Khumalo</h3>
+            <p class="teacher-subject">Mathematics Teacher</p>
+            <p>Available Monday-Friday, 3pm-5pm</p>
+          </div>
+          <button class="btn" id="askMathTeacherBtn">Ask a Question</button>
+        </div>
+        
+        <div class="teacher-card">
+          <img src="assets/images/teacher2.jpg" alt="Teacher" class="teacher-avatar">
+          <div class="teacher-info">
+            <h3>Ms. Williams</h3>
+            <p class="teacher-subject">English Teacher</p>
+            <p>Available Tuesday-Thursday, 4pm-6pm</p>
+          </div>
+          <button class="btn" id="askEnglishTeacherBtn">Ask a Question</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2023 SmartStudy SA. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="languages.html">Language Settings</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+  <script src="js/community.js"></script>
+</body>
+</html>

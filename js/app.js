@@ -1,81 +1,110 @@
-// Enhanced app.js with better content loading
-function loadLesson(subject) {
-    const content = document.getElementById('content');
-    content.innerHTML = `
-      <div class="loading-animation">
-        <h3>Loading ${subject} content...</h3>
-        <div class="spinner"></div>
-      </div>
-    `;
-    
-    // Simulate API call
-    setTimeout(() => {
-      const lessonContent = generateLessonContent(subject);
-      content.innerHTML = lessonContent;
-    }, 1500);
+// Theme toggle functionality
+const themeToggle = document.getElementById('themeToggle');
+const currentTheme = localStorage.getItem('theme') || 'light';
+
+// Apply the current theme
+document.documentElement.setAttribute('data-theme', currentTheme);
+
+// Update the toggle icon
+if (currentTheme === 'dark') {
+  themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+} else {
+  themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+}
+
+// Toggle theme when button is clicked
+themeToggle.addEventListener('click', () => {
+  const currentTheme = document.documentElement.getAttribute('data-theme');
+  const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+  
+  document.documentElement.setAttribute('data-theme', newTheme);
+  localStorage.setItem('theme', newTheme);
+  
+  // Update the toggle icon
+  if (newTheme === 'dark') {
+    themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+  } else {
+    themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+  }
+});
+
+// Service Worker Registration for PWA
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/service-worker.js')
+      .then(registration => {
+        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+      })
+      .catch(err => {
+        console.log('ServiceWorker registration failed: ', err);
+      });
+  });
+}
+
+// Accessibility features
+function initAccessibility() {
+  // Increase text size button
+  const textSizeButtons = document.querySelectorAll('.text-size-btn');
+  textSizeButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const currentSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
+      const newSize = btn.classList.contains('increase') ? currentSize + 1 : currentSize - 1;
+      document.documentElement.style.fontSize = `${newSize}px`;
+    });
+  });
+  
+  // High contrast toggle
+  const contrastToggle = document.getElementById('contrastToggle');
+  if (contrastToggle) {
+    contrastToggle.addEventListener('change', (e) => {
+      document.body.classList.toggle('high-contrast', e.target.checked);
+    });
+  }
+}
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+  initAccessibility();
+  
+  // Load user preferences if available
+  if (localStorage.getItem('username')) {
+    const usernameElements = document.querySelectorAll('#username, .username-placeholder');
+    usernameElements.forEach(el => {
+      el.textContent = localStorage.getItem('username');
+    });
   }
   
-  function generateLessonContent(subject) {
-    const subjects = {
-      math: {
-        title: "Mathematics Lessons",
-        content: `
-          <div class="card">
-            <h3>Algebra Basics</h3>
-            <p>Learn fundamental algebraic concepts and equations.</p>
-            <button class="start-lesson" onclick="startLesson('algebra')">Start Lesson</button>
-          </div>
-          <div class="card">
-            <h3>Geometry Fundamentals</h3>
-            <p>Explore shapes, angles, and geometric theorems.</p>
-            <button class="start-lesson" onclick="startLesson('geometry')">Start Lesson</button>
-          </div>
-        `
-      },
-      english: {
-        title: "English Language",
-        content: `
-          <div class="card">
-            <h3>Grammar Essentials</h3>
-            <p>Master the rules of English grammar and syntax.</p>
-            <button class="start-lesson" onclick="startLesson('grammar')">Start Lesson</button>
-          </div>
-          <div class="card">
-            <h3>Reading Comprehension</h3>
-            <p>Improve your reading and analysis skills.</p>
-            <button class="start-lesson" onclick="startLesson('reading')">Start Lesson</button>
-          </div>
-        `
-      },
-      // Add more subjects as needed
-    };
-  
-    return `
-      <h3>${subjects[subject].title}</h3>
-      <p>Available lessons for ${subject}:</p>
-      ${subjects[subject].content}
-      <button class="back-button" onclick="goBack()">Back to Subjects</button>
-    `;
+  // Language selector functionality
+  const languageSelect = document.getElementById('language-select');
+  if (languageSelect) {
+    languageSelect.value = localStorage.getItem('language') || 'en';
+    languageSelect.addEventListener('change', function() {
+      const lang = this.value;
+      localStorage.setItem('language', lang);
+      // In a real app, you would reload content in the new language
+      document.getElementById('language-note').innerText = `Language set to ${this.options[this.selectedIndex].text}`;
+    });
   }
+});
+
+// Offline detection
+window.addEventListener('online', () => {
+  showNotification('You are back online!', 'success');
+});
+
+window.addEventListener('offline', () => {
+  showNotification('You are offline. Some features may not be available.', 'warning');
+});
+
+// Notification function
+function showNotification(message, type = 'info') {
+  const notification = document.createElement('div');
+  notification.className = `notification ${type}`;
+  notification.textContent = message;
+  document.body.appendChild(notification);
   
-  function startLesson(topic) {
-    const content = document.getElementById('content');
-    content.innerHTML = `
-      <h3>${topic.charAt(0).toUpperCase() + topic.slice(1)} Lesson</h3>
-      <div class="lesson-content">
-        <p>This is where your interactive lesson content would appear.</p>
-        <p>You could include videos, interactive exercises, and quizzes here.</p>
-      </div>
-      <button class="back-button" onclick="goBack()">Back to Subjects</button>
-    `;
-  }
-  
-  function goBack() {
-    const content = document.getElementById('content');
-    content.innerHTML = `
-      <div class="welcome-message">
-        <h3>Welcome to SmartStudy SA</h3>
-        <p>Select a subject above to view available lessons and quizzes.</p>
-      </div>
-    `;
-  }
+  setTimeout(() => {
+    notification.classList.add('fade-out');
+    setTimeout(() => notification.remove(), 500);
+  }, 3000);
+}
