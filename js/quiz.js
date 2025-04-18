@@ -1,474 +1,248 @@
-// quiz.js - Interactive Quiz Functionality for SmartStudy SA
+// quiz.js - Now with API integration
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Quiz configuration
-    const quizConfig = {
-      quizId: 'math-grade4', // Unique identifier for this quiz
-      quizTitle: 'Grade 4 Math: Addition',
-      passingScore: 70, // Minimum score to pass
-      timeLimit: 15 * 60, // 15 minutes in seconds
-      questions: [
-        {
-          id: 'q1',
-          text: 'What is 5 + 3?',
-          options: [
-            { id: 'q1-a', value: '6', text: '6', correct: false },
-            { id: 'q1-b', value: '8', text: '8', correct: true },
-            { id: 'q1-c', value: '10', text: '10', correct: false },
-            { id: 'q1-d', value: '7', text: '7', correct: false }
-          ],
-          explanation: 'The sum of 5 and 3 is 8.'
-        },
-        // Additional questions would follow the same structure
-        {
-          id: 'q2',
-          text: 'If you have 7 apples and get 4 more, how many apples do you have?',
-          options: [
-            { id: 'q2-a', value: '10', text: '10', correct: false },
-            { id: 'q2-b', value: '11', text: '11', correct: true },
-            { id: 'q2-c', value: '12', text: '12', correct: false },
-            { id: 'q2-d', value: '13', text: '13', correct: false }
-          ],
-          explanation: '7 apples + 4 apples = 11 apples'
-        }
-      ]
-    };
-  
-    // Quiz state
-    const quizState = {
+import { apiService } from './apiService';
+import { authService } from './auth';
+
+document.addEventListener('DOMContentLoaded', async function() {
+  try {
+    // Get current user
+    const user = await authService.getCurrentUser();
+    if (!user) {
+      window.location.href = 'index.html';
+      return;
+    }
+
+    // Get quiz ID from URL
+    const quizId = new URLSearchParams(window.location.search).get('id');
+    if (!quizId) {
+      throw new Error('No quiz ID provided');
+    }
+
+    // Load quiz data
+    const quiz = await apiService.getQuiz(quizId);
+    const userProgress = await apiService.getUserProgress(user.id);
+    const quizProgress = userProgress.quizzes?.[quizId] || {};
+
+    // Initialize quiz
+    const quizApp = new QuizApp(quiz, user.id, quizProgress);
+    quizApp.init();
+  } catch (error) {
+    console.error('Failed to initialize quiz:', error);
+    showNotification('Failed to load quiz. Please try again.', 'error');
+  }
+});
+
+class QuizApp {
+  constructor(quiz, userId, quizProgress) {
+    this.quiz = quiz;
+    this.userId = userId;
+    this.quizProgress = quizProgress;
+    this.state = {
       currentQuestionIndex: 0,
-      score: 0,
-      timeRemaining: quizConfig.timeLimit,
-      timerInterval: null,
-      userAnswers: {},
-      quizCompleted: false
+      answers: {},
+      startTime: new Date(),
+      timerInterval: null
     };
-  
-    // DOM Elements
-    const quizForm = document.getElementById('quizForm');
-    const quizProgress = document.getElementById('quizProgress');
-    const progressText = document.getElementById('progressText');
-    const timeRemainingDisplay = document.getElementById('timeRemaining');
-    const quizResults = document.getElementById('quizResults');
-    const finalScoreDisplay = document.getElementById('finalScore');
-    const correctCountDisplay = document.getElementById('correctCount');
-    const resultTitle = document.getElementById('resultTitle');
-    const resultDescription = document.getElementById('resultDescription');
-    const reviewQuizBtn = document.getElementById('reviewQuiz');
-    const retakeQuizBtn = document.getElementById('retakeQuiz');
-  
-    // Initialize the quiz
-    function initQuiz() {
-      renderQuestion();
-      startTimer();
-      updateProgress();
-      setupEventListeners();
+  }
+
+  async init() {
+    this.renderQuizInfo();
+    this.renderQuestion();
+    this.setupEventListeners();
+    this.startTimer();
+  }
+
+  renderQuizInfo() {
+    document.getElementById('quizTitle').textContent = this.quiz.title;
+    
+    // Display highest score if available
+    if (this.quizProgress.highestScore) {
+      document.getElementById('highScore').textContent = 
+        `Your best: ${this.quizProgress.highestScore}%`;
     }
-  
-    // Render the current question
-    function renderQuestion() {
-      const currentQuestion = quizConfig.questions[quizState.currentQuestionIndex];
-      const questionContainer = document.getElementById(currentQuestion.id);
+  }
+
+  renderQuestion() {
+    const question = this.quiz.questions[this.state.currentQuestionIndex];
+    const questionContainer = document.getElementById('questionContainer');
+    
+    questionContainer.innerHTML = `
+      <div class="question-header">
+        <span>Question ${this.state.currentQuestionIndex + 1} of ${this.quiz.questions.length}</span>
+      </div>
+      <p class="question-text">${question.text}</p>
+      <div class="options-grid">
+        ${question.options.map(option => `
+          <label class="option-card">
+            <input type="radio" name="question" value="${option.value}" 
+                   ${this.state.answers[question.id] === option.value ? 'checked' : ''}>
+            <span class="option-content">
+              <span class="option-letter">${option.id.split('-')[1].toUpperCase()}</span>
+              <span class="option-text">${option.value}</span>
+            </span>
+          </label>
+        `).join('')}
+      </div>
+    `;
+    
+    this.updateNavigation();
+  }
+
+  updateNavigation() {
+    const prevBtn = document.getElementById('prevQuestion');
+    const nextBtn = document.getElementById('nextQuestion');
+    
+    prevBtn.disabled = this.state.currentQuestionIndex === 0;
+    nextBtn.textContent = this.state.currentQuestionIndex === this.quiz.questions.length - 1 
+      ? 'Submit Quiz' 
+      : 'Next Question';
+  }
+
+  startTimer() {
+    const timerDisplay = document.getElementById('timeRemaining');
+    const updateTimer = () => {
+      const elapsed = Math.floor((new Date() - this.state.startTime) / 1000);
+      const remaining = Math.max(0, 15 * 60 - elapsed); // 15 minute limit
       
-      // Make sure the question container exists
-      if (!questionContainer) {
-        console.error(`Question container not found: ${currentQuestion.id}`);
-        return;
+      const minutes = Math.floor(remaining / 60);
+      const seconds = remaining % 60;
+      timerDisplay.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+      
+      if (remaining <= 0) {
+        clearInterval(this.state.timerInterval);
+        this.submitQuiz();
       }
-  
-      // Show this question and hide others
-      document.querySelectorAll('.quiz-question').forEach(q => {
-        q.classList.remove('active');
-      });
-      questionContainer.classList.add('active');
-  
-      // Update navigation buttons
-      updateNavigationButtons();
-    }
-  
-    // Update previous/next navigation buttons
-    function updateNavigationButtons() {
-      const prevButtons = document.querySelectorAll('.prev-question');
-      const nextButtons = document.querySelectorAll('.next-question');
+    };
+    
+    this.state.timerInterval = setInterval(updateTimer, 1000);
+    updateTimer();
+  }
+
+  setupEventListeners() {
+    document.getElementById('prevQuestion').addEventListener('click', () => {
+      this.state.currentQuestionIndex--;
+      this.renderQuestion();
+    });
+    
+    document.getElementById('nextQuestion').addEventListener('click', () => {
+      this.saveCurrentAnswer();
       
-      // Previous button state
-      prevButtons.forEach(btn => {
-        btn.disabled = quizState.currentQuestionIndex === 0;
-      });
-  
-      // Next button text
-      const isLastQuestion = quizState.currentQuestionIndex === quizConfig.questions.length - 1;
-      nextButtons.forEach(btn => {
-        btn.textContent = isLastQuestion ? 'Submit Quiz' : 'Next Question';
-      });
+      if (this.state.currentQuestionIndex < this.quiz.questions.length - 1) {
+        this.state.currentQuestionIndex++;
+        this.renderQuestion();
+      } else {
+        this.submitQuiz();
+      }
+    });
+  }
+
+  saveCurrentAnswer() {
+    const currentQuestion = this.quiz.questions[this.state.currentQuestionIndex];
+    const selectedOption = document.querySelector('input[name="question"]:checked');
+    
+    if (selectedOption) {
+      this.state.answers[currentQuestion.id] = selectedOption.value;
     }
-  
-    // Start the quiz timer
-    function startTimer() {
-      updateTimerDisplay();
-      quizState.timerInterval = setInterval(() => {
-        quizState.timeRemaining--;
-        updateTimerDisplay();
-        
-        if (quizState.timeRemaining <= 0) {
-          clearInterval(quizState.timerInterval);
-          endQuiz();
+  }
+
+  async submitQuiz() {
+    clearInterval(this.state.timerInterval);
+    
+    // Calculate score
+    const correctAnswers = this.quiz.questions.reduce((count, question) => {
+      const correctOption = question.options.find(opt => opt.correct);
+      return count + (this.state.answers[question.id] === correctOption?.value ? 1 : 0);
+    }, 0);
+    
+    const score = Math.round((correctAnswers / this.quiz.questions.length) * 100);
+    
+    // Save results
+    try {
+      await apiService.saveQuizResults(
+        this.userId,
+        this.quiz.id,
+        {
+          score,
+          answers: this.state.answers
         }
-      }, 1000);
+      );
+      
+      this.showResults(score, correctAnswers);
+    } catch (error) {
+      console.error('Failed to save quiz results:', error);
+      showNotification('Failed to save results. Please check your connection.', 'error');
     }
-  
-    // Update timer display
-    function updateTimerDisplay() {
-      const minutes = Math.floor(quizState.timeRemaining / 60);
-      const seconds = quizState.timeRemaining % 60;
-      timeRemainingDisplay.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
-      
-      // Add warning class when time is running low
-      if (quizState.timeRemaining < 60) {
-        timeRemainingDisplay.classList.add('warning');
-      } else {
-        timeRemainingDisplay.classList.remove('warning');
-      }
-    }
-  
-    // Update progress bar and text
-    function updateProgress() {
-      const progressPercent = ((quizState.currentQuestionIndex + 1) / quizConfig.questions.length) * 100;
-      quizProgress.style.width = `${progressPercent}%`;
-      progressText.textContent = `${quizState.currentQuestionIndex + 1}/${quizConfig.questions.length} questions`;
-    }
-  
-    // Set up event listeners
-    function setupEventListeners() {
-      // Next question buttons
-      document.querySelectorAll('.next-question').forEach(button => {
-        button.addEventListener('click', handleNextQuestion);
-      });
-  
-      // Previous question buttons
-      document.querySelectorAll('.prev-question').forEach(button => {
-        button.addEventListener('click', handlePreviousQuestion);
-      });
-  
-      // Review quiz button
-      if (reviewQuizBtn) {
-        reviewQuizBtn.addEventListener('click', reviewQuizAnswers);
-      }
-  
-      // Retake quiz button
-      if (retakeQuizBtn) {
-        retakeQuizBtn.addEventListener('click', retakeQuiz);
-      }
-    }
-  
-    // Handle moving to next question
-    function handleNextQuestion(e) {
-      e.preventDefault();
-      
-      const currentQuestion = quizConfig.questions[quizState.currentQuestionIndex];
-      const selectedOption = document.querySelector(`#${currentQuestion.id} input[type="radio"]:checked`);
-      
-      // Validate selection
-      if (!selectedOption) {
-        showNotification('Please select an answer before continuing.', 'error');
-        return;
-      }
-      
-      // Save the user's answer
-      quizState.userAnswers[currentQuestion.id] = selectedOption.value;
-      
-      // Check if answer is correct
-      const correctOption = currentQuestion.options.find(opt => opt.correct);
-      if (selectedOption.value === correctOption.value) {
-        quizState.score++;
-      }
-      
-      // Move to next question or end quiz
-      if (quizState.currentQuestionIndex < quizConfig.questions.length - 1) {
-        quizState.currentQuestionIndex++;
-        renderQuestion();
-        updateProgress();
-      } else {
-        endQuiz();
-      }
-    }
-  
-    // Handle moving to previous question
-    function handlePreviousQuestion(e) {
-      e.preventDefault();
-      
-      if (quizState.currentQuestionIndex > 0) {
-        quizState.currentQuestionIndex--;
-        renderQuestion();
-        updateProgress();
-      }
-    }
-  
-    // End the quiz and show results
-    function endQuiz() {
-      clearInterval(quizState.timerInterval);
-      quizState.quizCompleted = true;
-      
-      // Calculate final score
-      const scorePercentage = Math.round((quizState.score / quizConfig.questions.length) * 100);
-      
-      // Display results
-      finalScoreDisplay.textContent = scorePercentage;
-      correctCountDisplay.textContent = `${quizState.score} out of ${quizConfig.questions.length}`;
-      
-      // Set feedback based on score
-      if (scorePercentage >= quizConfig.passingScore) {
-        resultTitle.textContent = 'Congratulations!';
-        resultDescription.textContent = 'You passed the quiz! Well done on your understanding of this material.';
-      } else {
-        resultTitle.textContent = 'Keep Practicing!';
-        resultDescription.textContent = 'Review the material and try again. You can do it!';
-      }
-      
-      // Hide quiz form and show results
-      quizForm.style.display = 'none';
-      quizResults.style.display = 'block';
-      
-      // Save quiz results
-      saveQuizResults(scorePercentage);
-    }
-  
-    // Save quiz results to local storage
-    function saveQuizResults(score) {
-      const quizResults = JSON.parse(localStorage.getItem('quizResults')) || {};
-      
-      // Only save if this is a higher score
-      if (!quizResults[quizConfig.quizId] || score > quizResults[quizConfig.quizId].score) {
-        quizResults[quizConfig.quizId] = {
-          score: score,
-          date: new Date().toISOString(),
-          totalQuestions: quizConfig.questions.length,
-          correctAnswers: quizState.score
+  }
+
+  showResults(score, correctAnswers) {
+    document.getElementById('quizContainer').style.display = 'none';
+    
+    const resultsContainer = document.getElementById('resultsContainer');
+    resultsContainer.style.display = 'block';
+    document.getElementById('finalScore').textContent = score;
+    document.getElementById('correctCount').textContent = `${correctAnswers}/${this.quiz.questions.length}`;
+    
+    // Set feedback based on score
+    const feedback = score >= 70
+      ? {
+          title: 'Congratulations!',
+          message: 'You passed the quiz! Well done on your understanding of this material.'
+        }
+      : {
+          title: 'Keep Practicing!',
+          message: 'Review the material and try again. You can do it!'
         };
-        localStorage.setItem('quizResults', JSON.stringify(quizResults));
-      }
-      
-      // Update user progress
-      updateUserProgress(score);
+    
+    document.getElementById('resultTitle').textContent = feedback.title;
+    document.getElementById('resultDescription').textContent = feedback.message;
+    
+    // Check for achievements
+    if (score === 100) {
+      this.awardPerfectScoreBadge();
     }
-  
-    // Update user progress tracking
-    function updateUserProgress(score) {
-      const userProgress = JSON.parse(localStorage.getItem('userProgress')) || {
-        quizzesTaken: 0,
-        totalScore: 0,
-        lastQuizDate: null,
-        badges: []
-      };
-      
-      userProgress.quizzesTaken++;
-      userProgress.totalScore += score;
-      userProgress.lastQuizDate = new Date().toISOString();
-      
-      // Check for achievements
-      checkForAchievements(userProgress, score);
-      
-      localStorage.setItem('userProgress', JSON.stringify(userProgress));
-    }
-  
-    // Check for achievements/badges
-    function checkForAchievements(userProgress, score) {
-      const achievements = [];
-      
-      // First quiz taken
-      if (userProgress.quizzesTaken === 1) {
-        achievements.push({
-          id: 'first-quiz',
-          name: 'First Quiz',
-          description: 'Completed your first quiz',
-          icon: 'fas fa-star',
-          date: new Date().toISOString()
-        });
-      }
-      
-      // Perfect score
-      if (score === 100) {
-        achievements.push({
-          id: 'perfect-score',
-          name: 'Perfect Score',
-          description: 'Scored 100% on a quiz',
-          icon: 'fas fa-trophy',
-          date: new Date().toISOString()
-        });
-      }
-      
-      // Save new achievements
-      if (achievements.length > 0) {
-        const userAchievements = JSON.parse(localStorage.getItem('userAchievements')) || [];
-        userAchievements.push(...achievements);
-        localStorage.setItem('userAchievements', JSON.stringify(userAchievements));
-        
-        // Show achievement notifications
-        achievements.forEach(achievement => {
-          showAchievementNotification(achievement);
-        });
-      }
-    }
-  
-    // Show achievement notification
-    function showAchievementNotification(achievement) {
-      const notification = document.createElement('div');
-      notification.className = 'achievement-notification';
-      notification.innerHTML = `
-        <div class="achievement-icon">
-          <i class="${achievement.icon}"></i>
-        </div>
-        <div class="achievement-content">
-          <h3>New Achievement!</h3>
-          <p>${achievement.name}</p>
-          <small>${achievement.description}</small>
-        </div>
-      `;
-      
-      document.body.appendChild(notification);
-      
-      setTimeout(() => {
-        notification.classList.add('show');
-      }, 100);
-      
-      setTimeout(() => {
-        notification.classList.remove('show');
-        setTimeout(() => notification.remove(), 500);
-      }, 5000);
-    }
-  
-    // Review quiz answers
-    function reviewQuizAnswers() {
-      // Hide results and show quiz form
-      quizResults.style.display = 'none';
-      quizForm.style.display = 'block';
-      
-      // Show all questions with correct answers highlighted
-      quizConfig.questions.forEach((question, index) => {
-        const questionEl = document.getElementById(question.id);
-        if (!questionEl) {
-          return;
-        }
-        
-        questionEl.classList.add('review-mode');
-        
-        // Highlight correct answer
-        const correctOption = question.options.find(opt => opt.correct);
-        if (correctOption) {
-          const correctInput = document.querySelector(`#${question.id} input[value="${correctOption.value}"]`);
-          if (correctInput) {
-            correctInput.closest('.option-card').classList.add('correct-answer');
-          }
-        }
-        
-        // Highlight user's answer if incorrect
-        const userAnswer = quizState.userAnswers[question.id];
-        if (userAnswer && userAnswer !== correctOption.value) {
-          const userInput = document.querySelector(`#${question.id} input[value="${userAnswer}"]`);
-          if (userInput) {
-            userInput.closest('.option-card').classList.add('incorrect-answer');
-          }
-        }
-        
-        // Show explanation
-        const explanationEl = document.createElement('div');
-        explanationEl.className = 'question-explanation';
-        explanationEl.innerHTML = `<p><strong>Explanation:</strong> ${question.explanation}</p>`;
-        questionEl.appendChild(explanationEl);
+  }
+
+  async awardPerfectScoreBadge() {
+    try {
+      await apiService.addUserBadge(this.userId, 'perfect-score');
+      showAchievementNotification({
+        id: 'perfect-score',
+        name: 'Perfect Score',
+        description: 'Scored 100% on a quiz',
+        icon: 'fas fa-trophy'
       });
-      
-      // Show first question
-      quizState.currentQuestionIndex = 0;
-      renderQuestion();
-      
-      // Disable all inputs
-      document.querySelectorAll('.quiz-question input').forEach(input => {
-        input.disabled = true;
-      });
-      
-      // Change navigation buttons
-      document.querySelectorAll('.next-question').forEach(btn => {
-        btn.textContent = 'Next Question';
-        btn.removeEventListener('click', handleNextQuestion);
-        btn.addEventListener('click', () => {
-          if (quizState.currentQuestionIndex < quizConfig.questions.length - 1) {
-            quizState.currentQuestionIndex++;
-            renderQuestion();
-          }
-        });
-      });
-      
-      document.querySelectorAll('.prev-question').forEach(btn => {
-        btn.removeEventListener('click', handlePreviousQuestion);
-        btn.addEventListener('click', () => {
-          if (quizState.currentQuestionIndex > 0) {
-            quizState.currentQuestionIndex--;
-            renderQuestion();
-          }
-        });
-      });
+    } catch (error) {
+      console.error('Failed to award badge:', error);
     }
+  }
+}
+
+// Helper functions
+function showNotification(message, type = 'info') {
+  const notification = document.createElement('div');
+  notification.className = `notification ${type}`;
+  notification.textContent = message;
+  document.body.appendChild(notification);
   
-    // Retake the quiz
-    function retakeQuiz() {
-      // Reset quiz state
-      quizState.currentQuestionIndex = 0;
-      quizState.score = 0;
-      quizState.timeRemaining = quizConfig.timeLimit;
-      quizState.userAnswers = {};
-      quizState.quizCompleted = false;
-      
-      // Hide results and show quiz form
-      quizResults.style.display = 'none';
-      quizForm.style.display = 'block';
-      
-      // Reset all questions
-      quizConfig.questions.forEach(question => {
-        const questionEl = document.getElementById(question.id);
-        if (questionEl) {
-          questionEl.classList.remove('review-mode');
-          questionEl.querySelectorAll('.option-card').forEach(card => {
-            card.classList.remove('correct-answer', 'incorrect-answer');
-          });
-          
-          const explanation = questionEl.querySelector('.question-explanation');
-          if (explanation) {
-            explanation.remove();
-          }
-        }
-      });
-      
-      // Re-enable inputs
-      document.querySelectorAll('.quiz-question input').forEach(input => {
-        input.disabled = false;
-        input.checked = false;
-      });
-      
-      // Reset event listeners
-      setupEventListeners();
-      
-      // Restart timer
-      clearInterval(quizState.timerInterval);
-      startTimer();
-      
-      // Show first question
-      renderQuestion();
-      updateProgress();
-    }
+  setTimeout(() => {
+    notification.remove();
+  }, 3000);
+}
+
+function showAchievementNotification(achievement) {
+  const notification = document.createElement('div');
+  notification.className = 'achievement-notification';
+  notification.innerHTML = `
+    <div class="achievement-icon">
+      <i class="${achievement.icon}"></i>
+    </div>
+    <div class="achievement-content">
+      <h3>New Achievement!</h3>
+      <p>${achievement.name}</p>
+      <small>${achievement.description}</small>
+    </div>
+  `;
   
-    // Show notification
-    function showNotification(message, type = 'info') {
-      const notification = document.createElement('div');
-      notification.className = `notification ${type}`;
-      notification.textContent = message;
-      document.body.appendChild(notification);
-      
-      setTimeout(() => {
-        notification.classList.add('fade-out');
-        setTimeout(() => notification.remove(), 500);
-      }, 3000);
-    }
-  
-    // Initialize the quiz
-    initQuiz();
-  });
+  document.body.appendChild(notification);
+  setTimeout(() => notification.remove(), 5000);
+}

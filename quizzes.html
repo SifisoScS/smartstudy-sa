@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quizzes - SmartStudy SA</title>
+  <title>Quiz - SmartStudy SA</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -16,98 +16,59 @@
       <nav class="nav-links">
         <a href="dashboard.html"><i class="fas fa-home"></i> Home</a>
         <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
-        <a href="community.html"><i class="fas fa-users"></i> Community</a>
         <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button>
       </nav>
     </div>
   </header>
   
-  <main>
-    <section class="quiz-header">
-      <div class="card">
-        <h1>Quizzes</h1>
-        <p>Test your knowledge and track your progress with our interactive quizzes</p>
-      </div>
-    </section>
-
-    <section class="quiz-categories">
-      <div class="card">
-        <h2>Subjects</h2>
-        <div class="category-tabs">
-          <button class="category-tab active" data-category="all">All</button>
-          <button class="category-tab" data-category="math">Mathematics</button>
-          <button class="category-tab" data-category="english">English</button>
-          <button class="category-tab" data-category="science">Science</button>
+  <main class="quiz-page">
+    <div id="quizContainer" class="card">
+      <div class="quiz-header">
+        <h1 id="quizTitle">Loading Quiz...</h1>
+        <div class="quiz-meta">
+          <span id="highScore"></span>
+          <span id="timeRemaining"><i class="fas fa-clock"></i> 15:00</span>
         </div>
       </div>
-    </section>
-
-    <section class="quiz-list">
-      <div class="card">
-        <div class="quiz-filter">
-          <div class="search-box">
-            <i class="fas fa-search"></i>
-            <input type="text" placeholder="Search quizzes...">
+      
+      <div id="questionContainer" class="quiz-content">
+        <!-- Questions will be loaded here by JavaScript -->
+      </div>
+      
+      <div class="quiz-navigation">
+        <button id="prevQuestion" class="btn btn-outline" disabled>
+          <i class="fas fa-arrow-left"></i> Previous
+        </button>
+        <button id="nextQuestion" class="btn">
+          Next <i class="fas fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+    
+    <div id="resultsContainer" class="card" style="display: none;">
+      <h2>Quiz Results</h2>
+      <div class="result-card">
+        <div class="result-score">
+          <div class="score-circle">
+            <span id="finalScore">0</span>%
           </div>
-          <select class="difficulty-filter">
-            <option value="all">All Difficulty</option>
-            <option value="easy">Easy</option>
-            <option value="medium">Medium</option>
-            <option value="hard">Hard</option>
-          </select>
+          <p>You answered <strong id="correctCount">0</strong> questions correctly</p>
         </div>
-
-        <div class="quizzes-container">
-          <div class="quiz-card math" data-difficulty="easy">
-            <div class="quiz-info">
-              <h3>Grade 4 Math: Addition</h3>
-              <p>Basic addition problems for beginners</p>
-              <div class="quiz-meta">
-                <span class="difficulty easy"><i class="fas fa-star"></i> Easy</span>
-                <span class="questions"><i class="fas fa-question-circle"></i> 10 Questions</span>
-                <span class="time"><i class="fas fa-clock"></i> 15 min</span>
-              </div>
-            </div>
-            <div class="quiz-actions">
-              <a href="quizzes/quiz-math-grade4.html" class="btn">Start Quiz</a>
-              <span class="score"><i class="fas fa-trophy"></i> Your best: 80%</span>
-            </div>
-          </div>
-
-          <div class="quiz-card english" data-difficulty="medium">
-            <div class="quiz-info">
-              <h3>Grade 4 English: Reading Comprehension</h3>
-              <p>Read short stories and answer questions</p>
-              <div class="quiz-meta">
-                <span class="difficulty medium"><i class="fas fa-star"></i> Medium</span>
-                <span class="questions"><i class="fas fa-question-circle"></i> 8 Questions</span>
-                <span class="time"><i class="fas fa-clock"></i> 20 min</span>
-              </div>
-            </div>
-            <div class="quiz-actions">
-              <a href="quizzes/quiz-english-grade4.html" class="btn">Start Quiz</a>
-              <span class="score"><i class="fas fa-trophy"></i> Your best: 65%</span>
-            </div>
-          </div>
-
-          <div class="quiz-card science" data-difficulty="hard">
-            <div class="quiz-info">
-              <h3>Grade 4 Science: Plants</h3>
-              <p>Test your knowledge about plant life</p>
-              <div class="quiz-meta">
-                <span class="difficulty hard"><i class="fas fa-star"></i> Hard</span>
-                <span class="questions"><i class="fas fa-question-circle"></i> 12 Questions</span>
-                <span class="time"><i class="fas fa-clock"></i> 25 min</span>
-              </div>
-            </div>
-            <div class="quiz-actions">
-              <a href="quizzes/quiz-science-grade4.html" class="btn">Start Quiz</a>
-              <span class="score"><i class="fas fa-trophy"></i> Not attempted</span>
-            </div>
-          </div>
+        <div class="result-feedback">
+          <h3 id="resultTitle"></h3>
+          <p id="resultDescription"></p>
         </div>
       </div>
-    </section>
+      
+      <div class="result-actions">
+        <a href="quizzes.html" class="btn btn-outline">
+          <i class="fas fa-list"></i> Back to Quizzes
+        </a>
+        <button id="retakeQuiz" class="btn">
+          <i class="fas fa-redo"></i> Retake Quiz
+        </button>
+      </div>
+    </div>
   </main>
 
   <footer>
@@ -121,7 +82,19 @@
     </div>
   </footer>
 
-  <script src="js/app.js"></script>
-  <script src="js/quizzes.js"></script>
+  <script type="module">
+    import { authService } from './js/auth.js';
+    import './js/quiz.js';
+    
+    // Handle retake quiz button
+    document.getElementById('retakeQuiz')?.addEventListener('click', () => {
+      window.location.reload();
+    });
+    
+    // Check authentication
+    authService.getCurrentUser().catch(() => {
+      window.location.href = 'index.html';
+    });
+  </script>
 </body>
 </html>
