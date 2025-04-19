@@ -35,19 +35,21 @@ html, body {
 }
 
 body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  transition: var(--transition);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-.page-wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-.main-content {
-  flex: 1;
+main {
+  flex: 1 0 auto;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /* Header */
@@ -246,10 +248,6 @@ header {
   opacity: 0.9;
 }
 
-.english {
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-}
-
 .maths {
   background: linear-gradient(135deg, var(--error-color), #b32d3a);
 }
@@ -258,8 +256,12 @@ header {
   background: linear-gradient(135deg, var(--success-color), #1e7a6d);
 }
 
-.technology {
+.digital-tech {
   background: linear-gradient(135deg, var(--accent-color), #3a9cd6);
+}
+
+.personal-dev {
+  background: linear-gradient(135deg, #f4a261, #e76f51);
 }
 
 .grade-selector {
@@ -310,21 +312,30 @@ header {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-.lesson-card h4 {
-  font-size: 16px;
+.lesson-card h5 {
+  font-size: 14px;
   margin-bottom: 10px;
 }
 
 .lesson-card p {
-  font-size: 14px;
+  font-size: 12px;
   opacity: 0.8;
 }
 
-.lessons-section {
-  max-width: 1000px;
-  margin: 30px auto;
-  padding: 20px;
-  min-height: 60vh; /* Ensures content takes up space */
+.term {
+  margin-bottom: 20px;
+}
+
+.term h4 {
+  font-size: 18px;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.topic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
 }
 
 /* Progress Section */
@@ -404,7 +415,7 @@ header {
   padding: 2rem 0;
   text-align: center;
   border-top: 4px solid var(--accent-color);
-  margin-top: auto;
+  flex-shrink: 0;
   width: 100%;
 }
 
@@ -451,7 +462,7 @@ header {
     padding: 10px;
   }
   
-  .access-grid, .subject-grid {
+  .access-grid, .subject-grid, .topic-grid {
     grid-template-columns: 1fr;
   }
   

@@ -1,114 +1,185 @@
 [
-    {
-      "subject": "English",
-      "icon": "📖",
-      "class": "english",
-      "grades": [
-        {
-          "grade": 8,
-          "lessons": [
-            { "title": "Parts of Speech", "description": "Learn about nouns, verbs, and adjectives.", "url": "/lessons/english/gr8/parts-of-speech.pdf" },
-            { "title": "Comprehension Skills", "description": "Practice reading and understanding texts.", "url": "/lessons/english/gr8/comprehension.pdf" }
-          ]
-        },
-        {
-          "grade": 9,
-          "lessons": [
-            { "title": "Figurative Language", "description": "Explore metaphors, similes, and more.", "url": "/lessons/english/gr9/figurative-language.pdf" },
-            { "title": "Essay Writing", "description": "Master the art of writing essays.", "url": "/lessons/english/gr9/essay-writing.pdf" }
-          ]
-        },
-        {
-          "grade": 10,
-          "lessons": [
-            { "title": "Poetry Analysis", "description": "Analyze poems with confidence.", "url": "/lessons/english/gr10/poetry-analysis.pdf" },
-            { "title": "Argumentative Writing", "description": "Write persuasive arguments.", "url": "/lessons/english/gr10/argumentative-writing.pdf" }
-          ]
-        }
-      ]
-    },
-    {
-      "subject": "Mathematics",
-      "icon": "➕",
-      "class": "maths",
-      "grades": [
-        {
-          "grade": 8,
-          "lessons": [
-            { "title": "Algebraic Expressions", "description": "Simplify and solve expressions.", "url": "/lessons/maths/gr8/algebraic-expressions.pdf" },
-            { "title": "Geometric Shapes", "description": "Explore properties of shapes.", "url": "/lessons/maths/gr8/geometric-shapes.pdf" }
-          ]
-        },
-        {
-          "grade": 9,
-          "lessons": [
-            { "title": "Linear Equations", "description": "Solve equations with one variable.", "url": "/lessons/maths/gr9/linear-equations.pdf" },
-            { "title": "Probability", "description": "Understand chance and outcomes.", "url": "/lessons/maths/gr9/probability.pdf" }
-          ]
-        },
-        {
-          "grade": 10,
-          "lessons": [
-            { "title": "Quadratic Equations", "description": "Solve using factoring and formulas.", "url": "/lessons/maths/gr10/quadratic-equations.pdf" },
-            { "title": "Trigonometry Basics", "description": "Introduction to sine, cosine, and tangent.", "url": "/lessons/maths/gr10/trigonometry-basics.pdf" }
-          ]
-        }
-      ]
-    },
-    {
-      "subject": "Science",
-      "icon": "🔬",
-      "class": "science",
-      "grades": [
-        {
-          "grade": 8,
-          "lessons": [
-            { "title": "Cells and Organisms", "description": "Learn about living systems.", "url": "/lessons/science/gr8/cells.pdf" },
-            { "title": "Forces and Motion", "description": "Understand Newton’s laws.", "url": "/lessons/science/gr8/forces.pdf" }
-          ]
-        },
-        {
-          "grade": 9,
-          "lessons": [
-            { "title": "Chemical Reactions", "description": "Explore types of reactions.", "url": "/lessons/science/gr9/chemical-reactions.pdf" },
-            { "title": "Electricity", "description": "Learn about circuits and current.", "url": "/lessons/science/gr9/electricity.pdf" }
-          ]
-        },
-        {
-          "grade": 10,
-          "lessons": [
-            { "title": "Acids and Bases", "description": "Understand pH and reactions.", "url": "/lessons/science/gr10/acids-bases.pdf" },
-            { "title": "Mechanics", "description": "Study motion and energy.", "url": "/lessons/science/gr10/mechanics.pdf" }
-          ]
-        }
-      ]
-    },
-    {
-      "subject": "Technology",
-      "icon": "💻",
-      "class": "technology",
-      "grades": [
-        {
-          "grade": 8,
-          "lessons": [
-            { "title": "Introduction to Coding", "description": "Learn basic programming concepts.", "url": "/lessons/tech/gr8/coding-intro.pdf" },
-            { "title": "Design Process", "description": "Understand problem-solving steps.", "url": "/lessons/tech/gr8/design-process.pdf" }
-          ]
-        },
-        {
-          "grade": 9,
-          "lessons": [
-            { "title": "Web Development Basics", "description": "Create simple websites.", "url": "/lessons/tech/gr9/web-dev.pdf" },
-            { "title": "Robotics Fundamentals", "description": "Explore robots and automation.", "url": "/lessons/tech/gr9/robotics.pdf" }
-          ]
-        },
-        {
-          "grade": 10,
-          "lessons": [
-            { "title": "Data and Databases", "description": "Learn about data storage.", "url": "/lessons/tech/gr10/databases.pdf" },
-            { "title": "App Development", "description": "Build a simple mobile app.", "url": "/lessons/tech/gr10/app-dev.pdf" }
-          ]
-        }
-      ]
-    }
-  ]
+  {
+    "subject": "Mathematics",
+    "icon": "➕",
+    "class": "maths",
+    "grades": [
+      {
+        "grade": 8,
+        "terms": [
+          {
+            "name": "Term 1: Numbers & Basic Operations",
+            "topics": [
+              { "title": "Place Value and Number Forms", "description": "Understand place value and number representations.", "url": "/lessons/maths/gr8/term1/place-value.pdf" },
+              { "title": "Whole Numbers: Operations", "description": "Master addition, subtraction, multiplication, division.", "url": "/lessons/maths/gr8/term1/whole-numbers.pdf" },
+              { "title": "Factors, Multiples, Prime Numbers", "description": "Explore number properties.", "url": "/lessons/maths/gr8/term1/factors.pdf" },
+              { "title": "Decimals and Rounding", "description": "Work with decimals and rounding techniques.", "url": "/lessons/maths/gr8/term1/decimals.pdf" }
+            ]
+          },
+          {
+            "name": "Term 2: Fractions, Ratios & Percentages",
+            "topics": [
+              { "title": "Simplifying and Operating with Fractions", "description": "Simplify, add, subtract fractions.", "url": "/lessons/maths/gr8/term2/fractions.pdf" },
+              { "title": "Converting Decimals, Fractions, Percentages", "description": "Convert between number forms.", "url": "/lessons/maths/gr8/term2/conversions.pdf" },
+              { "title": "Ratios and Proportions", "description": "Apply ratios in real-life contexts.", "url": "/lessons/maths/gr8/term2/ratios.pdf" },
+              { "title": "Word Problems: Discounts, Budgeting", "description": "Solve practical problems.", "url": "/lessons/maths/gr8/term2/word-problems.pdf" }
+            ]
+          },
+          {
+            "name": "Term 3: Algebra Foundations",
+            "topics": [
+              { "title": "Variables, Expressions, Equations", "description": "Introduction to algebraic concepts.", "url": "/lessons/maths/gr8/term3/algebra.pdf" },
+              { "title": "Order of Operations (BEDMAS)", "description": "Apply correct operation order.", "url": "/lessons/maths/gr8/term3/bedmas.pdf" },
+              { "title": "Patterns and Sequences", "description": "Identify and extend patterns.", "url": "/lessons/maths/gr8/term3/patterns.pdf" }
+            ]
+          },
+          {
+            "name": "Term 4: Graphing & Geometry",
+            "topics": [
+              { "title": "Coordinate Planes and Graphing", "description": "Plot points on coordinate planes.", "url": "/lessons/maths/gr8/term4/coordinates.pdf" },
+              { "title": "Perimeter, Area of Shapes", "description": "Calculate perimeter and area.", "url": "/lessons/maths/gr8/term4/area.pdf" },
+              { "title": "Introduction to Angles", "description": "Learn angle types and properties.", "url": "/lessons/maths/gr8/term4/angles.pdf" }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "subject": "Science",
+    "icon": "🔬",
+    "class": "science",
+    "grades": [
+      {
+        "grade": 8,
+        "terms": [
+          {
+            "name": "Term 1: Human Body Systems & Cells",
+            "topics": [
+              { "title": "Digestive, Circulatory, Respiratory Systems", "description": "Explore key body systems.", "url": "/lessons/science/gr8/term1/body-systems.pdf" },
+              { "title": "Basic Hygiene and Nutrition", "description": "Learn healthy habits.", "url": "/lessons/science/gr8/term1/hygiene.pdf" },
+              { "title": "Introduction to Cells and Microbes", "description": "Understand cells and microbes.", "url": "/lessons/science/gr8/term1/cells.pdf" }
+            ]
+          },
+          {
+            "name": "Term 2: Ecosystems & Environment",
+            "topics": [
+              { "title": "Producers, Consumers, Decomposers", "description": "Study ecosystem roles.", "url": "/lessons/science/gr8/term2/ecosystems.pdf" },
+              { "title": "Food Chains and Food Webs", "description": "Analyze energy flow.", "url": "/lessons/science/gr8/term2/food-webs.pdf" },
+              { "title": "Pollution, Sustainability, Recycling", "description": "Explore environmental issues.", "url": "/lessons/science/gr8/term2/sustainability.pdf" }
+            ]
+          },
+          {
+            "name": "Term 3: Matter & Materials",
+            "topics": [
+              { "title": "States of Matter and Changes", "description": "Learn about solids, liquids, gases.", "url": "/lessons/science/gr8/term3/matter.pdf" },
+              { "title": "Properties: Hardness, Magnetism, Conductivity", "description": "Study material properties.", "url": "/lessons/science/gr8/term3/properties.pdf" },
+              { "title": "Mixtures and Separation Techniques", "description": "Separate mixtures.", "url": "/lessons/science/gr8/term3/mixtures.pdf" }
+            ]
+          },
+          {
+            "name": "Term 4: Energy & Forces",
+            "topics": [
+              { "title": "Light, Sound, and Heat Energy", "description": "Explore energy types.", "url": "/lessons/science/gr8/term4/energy.pdf" },
+              { "title": "Simple Machines", "description": "Understand mechanical advantage.", "url": "/lessons/science/gr8/term4/machines.pdf" },
+              { "title": "Scientific Method & Mini Projects", "description": "Apply scientific inquiry.", "url": "/lessons/science/gr8/term4/projects.pdf" }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "subject": "Digital Technology",
+    "icon": "💻",
+    "class": "digital-tech",
+    "grades": [
+      {
+        "grade": 8,
+        "terms": [
+          {
+            "name": "Term 1: Introduction to HTML",
+            "topics": [
+              { "title": "HTML Structure and Tags", "description": "Learn HTML basics.", "url": "/lessons/tech/gr8/html/structure.pdf" },
+              { "title": "Headings, Paragraphs, Links", "description": "Create content with tags.", "url": "/lessons/tech/gr8/html/content.pdf" },
+              { "title": "Lists and Images", "description": "Add lists and images.", "url": "/lessons/tech/gr8/html/lists-images.pdf" },
+              { "title": "Mini Website: About Me Page", "description": "Build a personal page.", "url": "/lessons/tech/gr8/html/project.pdf" }
+            ]
+          },
+          {
+            "name": "Term 2: CSS Styling",
+            "topics": [
+              { "title": "Inline and Internal CSS", "description": "Apply basic styles.", "url": "/lessons/tech/gr8/css/inline.pdf" },
+              { "title": "Fonts, Colours, and Backgrounds", "description": "Style text and backgrounds.", "url": "/lessons/tech/gr8/css/styles.pdf" },
+              { "title": "Box Model: Margins, Padding, Borders", "description": "Understand layout.", "url": "/lessons/tech/gr8/css/box-model.pdf" },
+              { "title": "Final Project: Styled Personal Website", "description": "Create a styled site.", "url": "/lessons/tech/gr8/css/project.pdf" }
+            ]
+          },
+          {
+            "name": "Term 3: Digital Safety & Tools",
+            "topics": [
+              { "title": "Safe Browsing Habits", "description": "Learn online safety.", "url": "/lessons/tech/gr8/term3/safety.pdf" },
+              { "title": "Organising Digital Files", "description": "Manage files effectively.", "url": "/lessons/tech/gr8/term3/files.pdf" },
+              { "title": "Introduction to GitHub or CodePen", "description": "Explore coding platforms.", "url": "/lessons/tech/gr8/term3/tools.pdf" }
+            ]
+          },
+          {
+            "name": "Term 4: Creativity with Tech",
+            "topics": [
+              { "title": "Creating Posters with Canva", "description": "Design digital posters.", "url": "/lessons/tech/gr8/term4/canva.pdf" },
+              { "title": "Animation Basics with CSS", "description": "Create simple animations.", "url": "/lessons/tech/gr8/term4/animations.pdf" }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "subject": "Personal Development",
+    "icon": "🌟",
+    "class": "personal-dev",
+    "grades": [
+      {
+        "grade": 8,
+        "terms": [
+          {
+            "name": "Term 1: Identity & Self-Awareness",
+            "topics": [
+              { "title": "Who Am I? Strengths & Values", "description": "Discover personal strengths.", "url": "/lessons/personal-dev/gr8/term1/identity.pdf" },
+              { "title": "Growth Mindset vs. Fixed Mindset", "description": "Embrace growth mindset.", "url": "/lessons/personal-dev/gr8/term1/mindset.pdf" },
+              { "title": "Daily Journaling Habits", "description": "Start reflective journaling.", "url": "/lessons/personal-dev/gr8/term1/journaling.pdf" },
+              { "title": "Emotions: Naming and Managing", "description": "Understand emotions.", "url": "/lessons/personal-dev/gr8/term1/emotions.pdf" }
+            ]
+          },
+          {
+            "name": "Term 2: Routines & Relationships",
+            "topics": [
+              { "title": "Building Healthy Daily Routines", "description": "Create productive habits.", "url": "/lessons/personal-dev/gr8/term2/routines.pdf" },
+              { "title": "Time Management", "description": "Prioritize tasks effectively.", "url": "/lessons/personal-dev/gr8/term2/time.pdf" },
+              { "title": "Positive Communication", "description": "Communicate with respect.", "url": "/lessons/personal-dev/gr8/term2/communication.pdf" },
+              { "title": "Gratitude and Empathy Exercises", "description": "Practice gratitude.", "url": "/lessons/personal-dev/gr8/term2/empathy.pdf" }
+            ]
+          },
+          {
+            "name": "Term 3: Vision & Leadership",
+            "topics": [
+              { "title": "Goal Setting & Tracking", "description": "Set achievable goals.", "url": "/lessons/personal-dev/gr8/term3/goals.pdf" },
+              { "title": "Building a Personal Vision Board", "description": "Visualize aspirations.", "url": "/lessons/personal-dev/gr8/term3/vision.pdf" },
+              { "title": "Leadership in School & Home", "description": "Develop leadership skills.", "url": "/lessons/personal-dev/gr8/term3/leadership.pdf" },
+              { "title": "Conflict Resolution Basics", "description": "Resolve conflicts peacefully.", "url": "/lessons/personal-dev/gr8/term3/conflict.pdf" }
+            ]
+          },
+          {
+            "name": "Term 4: Contribution & Confidence",
+            "topics": [
+              { "title": "Public Speaking Exercises", "description": "Build speaking confidence.", "url": "/lessons/personal-dev/gr8/term4/speaking.pdf" },
+              { "title": "Reflection: My Year in Review", "description": "Reflect on growth.", "url": "/lessons/personal-dev/gr8/term4/reflection.pdf" },
+              { "title": "Community Project Planning", "description": "Plan a community project.", "url": "/lessons/personal-dev/gr8/term4/project.pdf" },
+              { "title": "Presentation of Growth Stories", "description": "Share personal stories.", "url": "/lessons/personal-dev/gr8/term4/presentation.pdf" }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
