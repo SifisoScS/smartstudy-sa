@@ -221,6 +221,7 @@ header {
   padding: 25px 15px;
   border-radius: 10px;
   color: white;
+  background: var(--card-bg); /* Fallback */
   transition: all 0.3s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   cursor: pointer;
@@ -234,6 +235,7 @@ header {
 .subject-button .icon {
   font-size: 40px;
   margin-bottom: 15px;
+  font-family: 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif;
 }
 
 .subject-button span {
@@ -248,19 +250,19 @@ header {
   opacity: 0.9;
 }
 
-.maths {
+.subject-button.maths {
   background: linear-gradient(135deg, var(--error-color), #b32d3a);
 }
 
-.science {
+.subject-button.science {
   background: linear-gradient(135deg, var(--success-color), #1e7a6d);
 }
 
-.digital-tech {
+.subject-button.digital-tech {
   background: linear-gradient(135deg, var(--accent-color), #3a9cd6);
 }
 
-.personal-dev {
+.subject-button.personal-dev {
   background: linear-gradient(135deg, #f4a261, #e76f51);
 }
 
@@ -322,20 +324,30 @@ header {
   opacity: 0.8;
 }
 
-.term {
+.semester, .term {
   margin-bottom: 20px;
 }
 
-.term h4 {
+.semester h4, .term h4 {
   font-size: 18px;
   color: var(--primary-color);
   margin-bottom: 15px;
 }
 
-.topic-grid {
+.week-grid, .topic-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 15px;
+}
+
+.bonus-section {
+  margin-top: 30px;
+}
+
+.bonus-section h4 {
+  font-size: 18px;
+  color: var(--primary-color);
+  margin-bottom: 15px;
 }
 
 /* Progress Section */
@@ -462,7 +474,7 @@ header {
     padding: 10px;
   }
   
-  .access-grid, .subject-grid, .topic-grid {
+  .access-grid, .subject-grid, .topic-grid, .week-grid {
     grid-template-columns: 1fr;
   }
   

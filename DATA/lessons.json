@@ -42,6 +42,43 @@
             ]
           }
         ]
+      },
+      {
+        "grade": 9,
+        "terms": [
+          {
+            "name": "Term 1: Algebraic Expressions, Equations, Factorisation",
+            "topics": [
+              { "title": "Simplifying Algebraic Expressions", "description": "Combine like terms and simplify.", "url": "/lessons/maths/gr9/term1/expressions.pdf" },
+              { "title": "Solving Linear Equations", "description": "Solve equations with one variable.", "url": "/lessons/maths/gr9/term1/equations.pdf" },
+              { "title": "Factorising Expressions", "description": "Factorise polynomials.", "url": "/lessons/maths/gr9/term1/factorisation.pdf" }
+            ]
+          },
+          {
+            "name": "Term 2: Linear and Quadratic Functions, Graphs",
+            "topics": [
+              { "title": "Linear Functions and Graphs", "description": "Graph linear equations.", "url": "/lessons/maths/gr9/term2/linear.pdf" },
+              { "title": "Quadratic Functions", "description": "Understand parabolas and quadratics.", "url": "/lessons/maths/gr9/term2/quadratic.pdf" },
+              { "title": "Interpreting Graphs", "description": "Analyze function graphs.", "url": "/lessons/maths/gr9/term2/graphs.pdf" }
+            ]
+          },
+          {
+            "name": "Term 3: Geometry: Lines, Angles, Triangles, Circles",
+            "topics": [
+              { "title": "Lines and Angles", "description": "Study angle relationships.", "url": "/lessons/maths/gr9/term3/lines.pdf" },
+              { "title": "Triangles and Properties", "description": "Explore triangle theorems.", "url": "/lessons/maths/gr9/term3/triangles.pdf" },
+              { "title": "Circles and Properties", "description": "Learn circle geometry.", "url": "/lessons/maths/gr9/term3/circles.pdf" }
+            ]
+          },
+          {
+            "name": "Term 4: Data Handling & Probability, Patterns, Reasoning",
+            "topics": [
+              { "title": "Data Handling and Statistics", "description": "Analyze data sets.", "url": "/lessons/maths/gr9/term4/data.pdf" },
+              { "title": "Probability Basics", "description": "Calculate probabilities.", "url": "/lessons/maths/gr9/term4/probability.pdf" },
+              { "title": "Patterns and Mathematical Reasoning", "description": "Solve pattern-based problems.", "url": "/lessons/maths/gr9/term4/patterns.pdf" }
+            ]
+          }
+        ]
       }
     ]
   },
@@ -86,12 +123,49 @@
             ]
           }
         ]
+      },
+      {
+        "grade": 9,
+        "terms": [
+          {
+            "name": "Term 1: States of Matter, Atomic Structure, Periodic Table",
+            "topics": [
+              { "title": "States of Matter", "description": "Explore solids, liquids, gases.", "url": "/lessons/science/gr9/term1/matter.pdf" },
+              { "title": "Atomic Structure", "description": "Understand atoms and subatomic particles.", "url": "/lessons/science/gr9/term1/atoms.pdf" },
+              { "title": "Periodic Table Basics", "description": "Learn periodic table organization.", "url": "/lessons/science/gr9/term1/periodic.pdf" }
+            ]
+          },
+          {
+            "name": "Term 2: Chemical Reactions, Acids & Bases, Energy Transfer",
+            "topics": [
+              { "title": "Chemical Reactions", "description": "Study reaction types.", "url": "/lessons/science/gr9/term2/reactions.pdf" },
+              { "title": "Acids and Bases", "description": "Explore pH and properties.", "url": "/lessons/science/gr9/term2/acids.pdf" },
+              { "title": "Energy Transfer", "description": "Understand energy in reactions.", "url": "/lessons/science/gr9/term2/energy.pdf" }
+            ]
+          },
+          {
+            "name": "Term 3: The Human Body Systems, Diseases, Health & Nutrition",
+            "topics": [
+              { "title": "Human Body Systems", "description": "Study advanced systems.", "url": "/lessons/science/gr9/term3/body.pdf" },
+              { "title": "Diseases and Prevention", "description": "Learn about diseases.", "url": "/lessons/science/gr9/term3/diseases.pdf" },
+              { "title": "Health and Nutrition", "description": "Explore healthy lifestyles.", "url": "/lessons/science/gr9/term3/nutrition.pdf" }
+            ]
+          },
+          {
+            "name": "Term 4: Ecosystems, Climate Change, Renewable Energy",
+            "topics": [
+              { "title": "Ecosystem Dynamics", "description": "Analyze ecosystems.", "url": "/lessons/science/gr9/term4/ecosystems.pdf" },
+              { "title": "Climate Change", "description": "Study environmental impacts.", "url": "/lessons/science/gr9/term4/climate.pdf" },
+              { "title": "Renewable Energy", "description": "Explore sustainable energy.", "url": "/lessons/science/gr9/term4/renewable.pdf" }
+            ]
+          }
+        ]
       }
     ]
   },
   {
     "subject": "Digital Technology",
-    "icon": "💻",
+    "icon": "&#128187;",
     "class": "digital-tech",
     "grades": [
       {
@@ -131,12 +205,53 @@
             ]
           }
         ]
+      },
+      {
+        "grade": 9,
+        "semesters": [
+          {
+            "name": "Semester 1: Programming with JavaScript",
+            "weeks": [
+              { "week": 1, "title": "What is JavaScript? Where and how it runs", "description": "Introduction to JavaScript.", "url": "/lessons/tech/gr9/js/week1.pdf" },
+              { "week": 2, "title": "Variables and Data Types", "description": "Learn variables and types.", "url": "/lessons/tech/gr9/js/week2.pdf" },
+              { "week": 3, "title": "Operators and Expressions", "description": "Use operators for calculations.", "url": "/lessons/tech/gr9/js/week3.pdf" },
+              { "week": 4, "title": "Conditional Statements (if/else, switch)", "description": "Control flow with conditions.", "url": "/lessons/tech/gr9/js/week4.pdf" },
+              { "week": 5, "title": "Loops (for, while)", "description": "Repeat tasks with loops.", "url": "/lessons/tech/gr9/js/week5.pdf" },
+              { "week": 6, "title": "Functions – Declaring and Calling", "description": "Create reusable functions.", "url": "/lessons/tech/gr9/js/week6.pdf" },
+              { "week": 7, "title": "Arrays and Objects Basics", "description": "Work with arrays and objects.", "url": "/lessons/tech/gr9/js/week7.pdf" },
+              { "week": 8, "title": "Debugging with Dev Tools", "description": "Debug code using browser tools.", "url": "/lessons/tech/gr9/js/week8.pdf" },
+              { "week": 9, "title": "Mini Project – Interactive Calculator", "description": "Build a calculator.", "url": "/lessons/tech/gr9/js/week9.pdf" },
+              { "week": 10, "title": "Group Coding Challenge", "description": "Collaborate on a challenge.", "url": "/lessons/tech/gr9/js/week10.pdf" }
+            ]
+          },
+          {
+            "name": "Semester 2: Dynamic Web with JS",
+            "weeks": [
+              { "week": 1, "title": "DOM Manipulation Basics", "description": "Interact with the DOM.", "url": "/lessons/tech/gr9/dynamic/week1.pdf" },
+              { "week": 2, "title": "Handling Events (click, input, etc.)", "description": "Add interactivity with events.", "url": "/lessons/tech/gr9/dynamic/week2.pdf" },
+              { "week": 3, "title": "Forms and Validation with JS", "description": "Validate form inputs.", "url": "/lessons/tech/gr9/dynamic/week3.pdf" },
+              { "week": 4, "title": "Timers and Animations", "description": "Create timers and animations.", "url": "/lessons/tech/gr9/dynamic/week4.pdf" },
+              { "week": 5, "title": "Introduction to JSON", "description": "Understand JSON data.", "url": "/lessons/tech/gr9/dynamic/week5.pdf" },
+              { "week": 6, "title": "Basic APIs – Fetching Data", "description": "Fetch data from APIs.", "url": "/lessons/tech/gr9/dynamic/week6.pdf" },
+              { "week": 7, "title": "Weather App – API Integration Project", "description": "Build a weather app.", "url": "/lessons/tech/gr9/dynamic/week7.pdf" },
+              { "week": 8, "title": "LocalStorage & SessionStorage", "description": "Store data locally.", "url": "/lessons/tech/gr9/dynamic/week8.pdf" },
+              { "week": 9, "title": "Final Project – Interactive Web Tool", "description": "Create a web tool.", "url": "/lessons/tech/gr9/dynamic/week9.pdf" },
+              { "week": 10, "title": "Presentation & Peer Review", "description": "Present projects.", "url": "/lessons/tech/gr9/dynamic/week10.pdf" }
+            ]
+          }
+        ],
+        "bonus": [
+          { "title": "What is an API and why does it matter?", "description": "Learn about APIs.", "url": "/lessons/tech/gr9/bonus/api.pdf" },
+          { "title": "Intro to Git and Version Control", "description": "Understand Git basics.", "url": "/lessons/tech/gr9/bonus/git.pdf" },
+          { "title": "Exploring AI that codes: GitHub Copilot & ChatGPT", "description": "Discover coding AI.", "url": "/lessons/tech/gr9/bonus/ai-coding.pdf" },
+          { "title": "What is Blockchain?", "description": "Explore blockchain technology.", "url": "/lessons/tech/gr9/bonus/blockchain.pdf" }
+        ]
       }
     ]
   },
   {
     "subject": "Personal Development",
-    "icon": "🌟",
+    "icon": "&#127775;",
     "class": "personal-dev",
     "grades": [
       {
@@ -176,6 +291,43 @@
               { "title": "Reflection: My Year in Review", "description": "Reflect on growth.", "url": "/lessons/personal-dev/gr8/term4/reflection.pdf" },
               { "title": "Community Project Planning", "description": "Plan a community project.", "url": "/lessons/personal-dev/gr8/term4/project.pdf" },
               { "title": "Presentation of Growth Stories", "description": "Share personal stories.", "url": "/lessons/personal-dev/gr8/term4/presentation.pdf" }
+            ]
+          }
+        ]
+      },
+      {
+        "grade": 9,
+        "terms": [
+          {
+            "name": "Term 1: Goal Setting, Self-Discipline, Emotional Intelligence",
+            "topics": [
+              { "title": "Advanced Goal Setting", "description": "Set SMART goals.", "url": "/lessons/personal-dev/gr9/term1/goals.pdf" },
+              { "title": "Self-Discipline Strategies", "description": "Build discipline habits.", "url": "/lessons/personal-dev/gr9/term1/discipline.pdf" },
+              { "title": "Emotional Intelligence", "description": "Understand and manage emotions.", "url": "/lessons/personal-dev/gr9/term1/emotional.pdf" }
+            ]
+          },
+          {
+            "name": "Term 2: Leadership Skills, Critical Thinking, Time Management",
+            "topics": [
+              { "title": "Leadership in Action", "description": "Lead projects and teams.", "url": "/lessons/personal-dev/gr9/term2/leadership.pdf" },
+              { "title": "Critical Thinking Skills", "description": "Analyze and solve problems.", "url": "/lessons/personal-dev/gr9/term2/thinking.pdf" },
+              { "title": "Advanced Time Management", "description": "Optimize schedules.", "url": "/lessons/personal-dev/gr9/term2/time.pdf" }
+            ]
+          },
+          {
+            "name": "Term 3: Communication Skills, Teamwork, Healthy Relationships",
+            "topics": [
+              { "title": "Effective Communication", "description": "Master verbal and written skills.", "url": "/lessons/personal-dev/gr9/term3/communication.pdf" },
+              { "title": "Teamwork and Collaboration", "description": "Work effectively in groups.", "url": "/lessons/personal-dev/gr9/term3/teamwork.pdf" },
+              { "title": "Building Healthy Relationships", "description": "Foster positive connections.", "url": "/lessons/personal-dev/gr9/term3/relationships.pdf" }
+            ]
+          },
+          {
+            "name": "Term 4: Resilience, Mindset Shifts, Preparing for the Future",
+            "topics": [
+              { "title": "Building Resilience", "description": "Overcome challenges.", "url": "/lessons/personal-dev/gr9/term4/resilience.pdf" },
+              { "title": "Mindset Shifts for Success", "description": "Adopt empowering mindsets.", "url": "/lessons/personal-dev/gr9/term4/mindset.pdf" },
+              { "title": "Preparing for the Future", "description": "Plan for high school and beyond.", "url": "/lessons/personal-dev/gr9/term4/future.pdf" }
             ]
           }
         ]
