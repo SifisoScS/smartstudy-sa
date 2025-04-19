@@ -79,6 +79,121 @@
             ]
           }
         ]
+      },
+      {
+        "grade": 10,
+        "terms": [
+          {
+            "name": "Term 1: Exponents and Surds",
+            "topics": [
+              { "title": "Laws of Exponents", "description": "Apply exponent rules.", "url": "/lessons/maths/gr10/term1/exponents.pdf" },
+              { "title": "Simplifying Surds", "description": "Work with irrational numbers.", "url": "/lessons/maths/gr10/term1/surds.pdf" },
+              { "title": "Rational Exponents", "description": "Extend exponent concepts.", "url": "/lessons/maths/gr10/term1/rational-exponents.pdf" }
+            ]
+          },
+          {
+            "name": "Term 2: Equations and Inequalities",
+            "topics": [
+              { "title": "Quadratic Equations", "description": "Solve using factoring and formula.", "url": "/lessons/maths/gr10/term2/quadratic.pdf" },
+              { "title": "Simultaneous Equations", "description": "Solve systems of equations.", "url": "/lessons/maths/gr10/term2/simultaneous.pdf" },
+              { "title": "Linear Inequalities", "description": "Graph and solve inequalities.", "url": "/lessons/maths/gr10/term2/inequalities.pdf" }
+            ]
+          },
+          {
+            "name": "Term 3: Trigonometry Basics",
+            "topics": [
+              { "title": "Trigonometric Ratios", "description": "Learn sine, cosine, tangent.", "url": "/lessons/maths/gr10/term3/trig-ratios.pdf" },
+              { "title": "Solving Right Triangles", "description": "Apply trig to right triangles.", "url": "/lessons/maths/gr10/term3/right-triangles.pdf" },
+              { "title": "Applications of Trigonometry", "description": "Solve real-world problems.", "url": "/lessons/maths/gr10/term3/applications.pdf" }
+            ]
+          },
+          {
+            "name": "Term 4: Analytical Geometry",
+            "topics": [
+              { "title": "Distance and Midpoint Formula", "description": "Calculate distances and midpoints.", "url": "/lessons/maths/gr10/term4/distance.pdf" },
+              { "title": "Gradient and Straight Lines", "description": "Work with line equations.", "url": "/lessons/maths/gr10/term4/lines.pdf" },
+              { "title": "Project: Geometric Analysis", "description": "Apply concepts to a project.", "url": "/lessons/maths/gr10/term4/project.pdf" }
+            ]
+          }
+        ]
+      },
+      {
+        "grade": 11,
+        "terms": [
+          {
+            "name": "Term 1: Advanced Algebra",
+            "topics": [
+              { "title": "Exponential and Logarithmic Equations", "description": "Solve advanced equations.", "url": "/lessons/maths/gr11/term1/exponential.pdf" },
+              { "title": "Systems of Equations", "description": "Solve complex systems.", "url": "/lessons/maths/gr11/term1/systems.pdf" },
+              { "title": "Sequences and Series", "description": "Explore arithmetic and geometric series.", "url": "/lessons/maths/gr11/term1/series.pdf" }
+            ]
+          },
+          {
+            "name": "Term 2: Trigonometric Functions",
+            "topics": [
+              { "title": "Graphs of Trig Functions", "description": "Analyze sine, cosine graphs.", "url": "/lessons/maths/gr11/term2/graphs.pdf" },
+              { "title": "Trig Identities", "description": "Use identities to simplify expressions.", "url": "/lessons/maths/gr11/term2/identities.pdf" },
+              { "title": "Solving Trig Equations", "description": "Solve equations using trig.", "url": "/lessons/maths/gr11/term2/equations.pdf" }
+            ]
+          },
+          {
+            "name": "Term 3: Euclidean Geometry",
+            "topics": [
+              { "title": "Similarity and Congruence", "description": "Prove geometric theorems.", "url": "/lessons/maths/gr11/term3/similarity.pdf" },
+              { "title": "Circle Geometry Theorems", "description": "Apply circle properties.", "url": "/lessons/maths/gr11/term3/circles.pdf" },
+              { "title": "Proofs and Applications", "description": "Solve geometric proofs.", "url": "/lessons/maths/gr11/term3/proofs.pdf" }
+            ]
+          },
+          {
+            "name": "Term 4: Statistics and Probability",
+            "topics": [
+              { "title": "Measures of Dispersion", "description": "Analyze variance and standard deviation.", "url": "/lessons/maths/gr11/term4/dispersion.pdf" },
+              { "title": "Probability Distributions", "description": "Understand distributions.", "url": "/lessons/maths/gr11/term4/probability.pdf" },
+              { "title": "Project: Data Analysis", "description": "Conduct a statistical project.", "url": "/lessons/maths/gr11/term4/project.pdf" }
+            ]
+          }
+        ]
+      },
+      {
+        "grade": 12,
+        "terms": [
+          {
+            "name": "Term 1: Differential Calculus",
+            "topics": [
+              { "title": "Limits and Continuity", "description": "Understand calculus foundations.", "url": "/lessons/maths/gr12/term1/limits.pdf" },
+              { "title": "Derivatives and Rules", "description": "Learn differentiation techniques.", "url": "/lessons/maths/gr12/term1/derivatives.pdf" },
+              { "title": "Applications of Derivatives", "description": "Solve optimization problems.", "url": "/lessons/maths/gr12/term1/applications.pdf" }
+            ]
+          },
+          {
+            "name": "Term 2: Integral Calculus",
+            "topics": [
+              { "title": "Antiderivatives and Integration", "description": "Learn integration basics.", "url": "/lessons/maths/gr12/term2/antiderivatives.pdf" },
+              { "title": "Definite Integrals", "description": "Calculate areas under curves.", "url": "/lessons/maths/gr12/term2/integrals.pdf" },
+              { "title": "Applications of Integration", "description": "Apply to real-world problems.", "url": "/lessons/maths/gr12/term2/applications.pdf" }
+            ]
+          },
+          {
+            "name": "Term 3: Analytical Geometry and Trigonometry",
+            "topics": [
+              { "title": "Conic Sections", "description": "Study parabolas, ellipses, hyperbolas.", "url": "/lessons/maths/gr12/term3/conics.pdf" },
+              { "title": "Advanced Trig Applications", "description": "Solve complex trig problems.", "url": "/lessons/maths/gr12/term3/trig.pdf" },
+              { "title": "3D Geometry", "description": "Work with 3D shapes.", "url": "/lessons/maths/gr12/term3/3d-geometry.pdf" }
+            ]
+          },
+          {
+            "name": "Term 4: Capstone Project",
+            "topics": [
+              { "title": "Math Modeling Project", "description": "Apply math to a real-world problem.", "url": "/lessons/maths/gr12/term4/modeling.pdf" },
+              { "title": "Peer Review and Refinement", "description": "Improve project with feedback.", "url": "/lessons/maths/gr12/term4/review.pdf" },
+              { "title": "Final Presentation", "description": "Present your project.", "url": "/lessons/maths/gr12/term4/presentation.pdf" }
+            ]
+          }
+        ],
+        "bonus": [
+          { "title": "Math in the Real World", "description": "Explore math careers.", "url": "/lessons/maths/gr12/bonus/careers.pdf" },
+          { "title": "History of Mathematics", "description": "Learn about math’s evolution.", "url": "/lessons/maths/gr12/bonus/history.pdf" }
+        ]
       }
     ]
   },
@@ -160,12 +275,127 @@
             ]
           }
         ]
+      },
+      {
+        "grade": 10,
+        "terms": [
+          {
+            "name": "Term 1: Mechanics and Motion",
+            "topics": [
+              { "title": "Kinematics: Speed, Velocity, Acceleration", "description": "Study motion concepts.", "url": "/lessons/science/gr10/term1/kinematics.pdf" },
+              { "title": "Newton’s Laws of Motion", "description": "Apply laws to real-world scenarios.", "url": "/lessons/science/gr10/term1/newton.pdf" },
+              { "title": "Forces and Free-Body Diagrams", "description": "Analyze forces in motion.", "url": "/lessons/science/gr10/term1/forces.pdf" }
+            ]
+          },
+          {
+            "name": "Term 2: Chemical Bonding and Reactions",
+            "topics": [
+              { "title": "Types of Chemical Bonds", "description": "Learn ionic and covalent bonding.", "url": "/lessons/science/gr10/term2/bonding.pdf" },
+              { "title": "Balancing Chemical Equations", "description": "Balance reaction equations.", "url": "/lessons/science/gr10/term2/equations.pdf" },
+              { "title": "Reaction Types", "description": "Explore synthesis, decomposition, etc.", "url": "/lessons/science/gr10/term2/reactions.pdf" }
+            ]
+          },
+          {
+            "name": "Term 3: Cells and Genetics",
+            "topics": [
+              { "title": "Cell Structure and Function", "description": "Study cell organelles.", "url": "/lessons/science/gr10/term3/cells.pdf" },
+              { "title": "DNA and Protein Synthesis", "description": "Understand genetic processes.", "url": "/lessons/science/gr10/term3/dna.pdf" },
+              { "title": "Mendelian Genetics", "description": "Learn inheritance patterns.", "url": "/lessons/science/gr10/term3/genetics.pdf" }
+            ]
+          },
+          {
+            "name": "Term 4: Energy and Environment",
+            "topics": [
+              { "title": "Energy Transformations", "description": "Study energy forms and transfers.", "url": "/lessons/science/gr10/term4/energy.pdf" },
+              { "title": "Environmental Impact of Energy Use", "description": "Analyze energy’s effects.", "url": "/lessons/science/gr10/term4/impact.pdf" },
+              { "title": "Project: Sustainable Solutions", "description": "Propose green energy ideas.", "url": "/lessons/science/gr10/term4/project.pdf" }
+            ]
+          }
+        ]
+      },
+      {
+        "grade": 11,
+        "terms": [
+          {
+            "name": "Term 1: Waves and Sound",
+            "topics": [
+              { "title": "Wave Properties", "description": "Understand wave characteristics.", "url": "/lessons/science/gr11/term1/waves.pdf" },
+              { "title": "Sound Waves and Doppler Effect", "description": "Study sound phenomena.", "url": "/lessons/science/gr11/term1/sound.pdf" },
+              { "title": "Applications of Waves", "description": "Explore real-world uses.", "url": "/lessons/science/gr11/term1/applications.pdf" }
+            ]
+          },
+          {
+            "name": "Term 2: Organic Chemistry",
+            "topics": [
+              { "title": "Hydrocarbons and Functional Groups", "description": "Learn organic structures.", "url": "/lessons/science/gr11/term2/hydrocarbons.pdf" },
+              { "title": "Organic Reactions", "description": "Study substitution, addition reactions.", "url": "/lessons/science/gr11/term2/reactions.pdf" },
+              { "title": "Polymers and Plastics", "description": "Explore synthetic materials.", "url": "/lessons/science/gr11/term2/polymers.pdf" }
+            ]
+          },
+          {
+            "name": "Term 3: Human Physiology",
+            "topics": [
+              { "title": "Nervous and Endocrine Systems", "description": "Study body regulation.", "url": "/lessons/science/gr11/term3/nervous.pdf" },
+              { "title": "Immune System and Diseases", "description": "Learn about immunity.", "url": "/lessons/science/gr11/term3/immune.pdf" },
+              { "title": "Reproduction and Development", "description": "Understand human reproduction.", "url": "/lessons/science/gr11/term3/reproduction.pdf" }
+            ]
+          },
+          {
+            "name": "Term 4: Practical Applications",
+            "topics": [
+              { "title": "Lab Skills: Experiments", "description": "Conduct science experiments.", "url": "/lessons/science/gr11/term4/experiments.pdf" },
+              { "title": "Science in Industry", "description": "Explore science in careers.", "url": "/lessons/science/gr11/term4/industry.pdf" },
+              { "title": "Project: Research Proposal", "description": "Design a science project.", "url": "/lessons/science/gr11/term4/project.pdf" }
+            ]
+          }
+        ]
+      },
+      {
+        "grade": 12,
+        "terms": [
+          {
+            "name": "Term 1: Electricity and Magnetism",
+            "topics": [
+              { "title": "Electrostatics", "description": "Study electric fields and charges.", "url": "/lessons/science/gr12/term1/electrostatics.pdf" },
+              { "title": "Circuits and Ohm’s Law", "description": "Analyze electrical circuits.", "url": "/lessons/science/gr12/term1/circuits.pdf" },
+              { "title": "Electromagnetism", "description": "Explore magnetic fields.", "url": "/lessons/science/gr12/term1/electromagnetism.pdf" }
+            ]
+          },
+          {
+            "name": "Term 2: Advanced Chemistry",
+            "topics": [
+              { "title": "Chemical Equilibrium", "description": "Understand reaction dynamics.", "url": "/lessons/science/gr12/term2/equilibrium.pdf" },
+              { "title": "Acids, Bases, and pH", "description": "Study advanced acid-base concepts.", "url": "/lessons/science/gr12/term2/acids-bases.pdf" },
+              { "title": "Electrochemistry", "description": "Learn about redox reactions.", "url": "/lessons/science/gr12/term2/electrochemistry.pdf" }
+            ]
+          },
+          {
+            "name": "Term 3: Evolution and Biodiversity",
+            "topics": [
+              { "title": "Theory of Evolution", "description": "Study Darwin’s principles.", "url": "/lessons/science/gr12/term3/evolution.pdf" },
+              { "title": "Biodiversity and Conservation", "description": "Explore ecosystems.", "url": "/lessons/science/gr12/term3/biodiversity.pdf" },
+              { "title": "Human Impact on Environment", "description": "Analyze human effects.", "url": "/lessons/science/gr12/term3/impact.pdf" }
+            ]
+          },
+          {
+            "name": "Term 4: Capstone Project",
+            "topics": [
+              { "title": "Science Research Project", "description": "Conduct a science experiment.", "url": "/lessons/science/gr12/term4/research.pdf" },
+              { "title": "Peer Review and Analysis", "description": "Review and improve findings.", "url": "/lessons/science/gr12/term4/review.pdf" },
+              { "title": "Final Presentation", "description": "Present your project.", "url": "/lessons/science/gr12/term4/presentation.pdf" }
+            ]
+          }
+        ],
+        "bonus": [
+          { "title": "Science Careers Day", "description": "Explore science career paths.", "url": "/lessons/science/gr12/bonus/careers.pdf" },
+          { "title": "Science in Society", "description": "Discuss science’s societal role.", "url": "/lessons/science/gr12/bonus/society.pdf" }
+        ]
       }
     ]
   },
   {
     "subject": "Digital Technology",
-    "icon": "&#128187;",
+    "icon": "💻",
     "class": "digital-tech",
     "grades": [
       {
@@ -246,12 +476,147 @@
           { "title": "Exploring AI that codes: GitHub Copilot & ChatGPT", "description": "Discover coding AI.", "url": "/lessons/tech/gr9/bonus/ai-coding.pdf" },
           { "title": "What is Blockchain?", "description": "Explore blockchain technology.", "url": "/lessons/tech/gr9/bonus/blockchain.pdf" }
         ]
+      },
+      {
+        "grade": 10,
+        "semesters": [
+          {
+            "name": "Semester 1: Backend Fundamentals",
+            "weeks": [
+              { "week": 1, "title": "What is a Full Stack Developer?", "description": "Understand the role and responsibilities.", "url": "/lessons/tech/gr10/sem1/week1.pdf" },
+              { "week": 2, "title": "Intro to Backend: Servers & Databases", "description": "Learn about client-server architecture.", "url": "/lessons/tech/gr10/sem1/week2.pdf" },
+              { "week": 3, "title": "Setting up Node.js & Express", "description": "Set up a development environment.", "url": "/lessons/tech/gr10/sem1/week3.pdf" },
+              { "week": 4, "title": "HTTP Methods (GET, POST, PUT, DELETE)", "description": "Understand HTTP methods for APIs.", "url": "/lessons/tech/gr10/sem1/week4.pdf" },
+              { "week": 5, "title": "Creating Routes and Controllers", "description": "Build routes with Express.js.", "url": "/lessons/tech/gr10/sem1/week5.pdf" },
+              { "week": 6, "title": "Intro to MongoDB / SQL (basic data storage)", "description": "Learn database basics.", "url": "/lessons/tech/gr10/sem1/week6.pdf" },
+              { "week": 7, "title": "Basic Authentication", "description": "Implement JWT and sessions.", "url": "/lessons/tech/gr10/sem1/week7.pdf" },
+              { "week": 8, "title": "REST APIs: Build your own", "description": "Design a RESTful API.", "url": "/lessons/tech/gr10/sem1/week8.pdf" },
+              { "week": 9, "title": "Mini Backend Project – To-Do List API", "description": "Create a functional API project.", "url": "/lessons/tech/gr10/sem1/week9.pdf" },
+              { "week": 10, "title": "Project Demo and Code Walkthrough", "description": "Present and review your project.", "url": "/lessons/tech/gr10/sem1/week10.pdf" }
+            ]
+          },
+          {
+            "name": "Semester 2: Frontend + Integration",
+            "weeks": [
+              { "week": 1, "title": "Recap HTML/CSS/JS Integration", "description": "Review frontend basics.", "url": "/lessons/tech/gr10/sem2/week1.pdf" },
+              { "week": 2, "title": "Creating a Frontend to Connect to Backend", "description": "Integrate React or Vue.js with APIs.", "url": "/lessons/tech/gr10/sem2/week2.pdf" },
+              { "week": 3, "title": "Asynchronous JS – Promises & Async/Await", "description": "Handle async operations.", "url": "/lessons/tech/gr10/sem2/week3.pdf" },
+              { "week": 4, "title": "Single Page Applications (Intro)", "description": "Learn SPA concepts.", "url": "/lessons/tech/gr10/sem2/week4.pdf" },
+              { "week": 5, "title": "Deploying Apps (using Netlify/Render)", "description": "Deploy your app online.", "url": "/lessons/tech/gr10/sem2/week5.pdf" },
+              { "week": 6, "title": "GitHub Collaboration", "description": "Work as a team using GitHub.", "url": "/lessons/tech/gr10/sem2/week6.pdf" },
+              { "week": 7, "title": "Error Handling and User Feedback", "description": "Improve user experience.", "url": "/lessons/tech/gr10/sem2/week7.pdf" },
+              { "week": 8, "title": "Full Stack Project – Blog or Diary App", "description": "Build a complete app.", "url": "/lessons/tech/gr10/sem2/week8.pdf" },
+              { "week": 9, "title": "Testing and Fixing Bugs", "description": "Debug and refine your project.", "url": "/lessons/tech/gr10/sem2/week9.pdf" },
+              { "week": 10, "title": "Showcase Day!", "description": "Present your full stack project.", "url": "/lessons/tech/gr10/sem2/week10.pdf" }
+            ]
+          }
+        ],
+        "bonus": [
+          { "title": "What does a Full Stack Developer do daily?", "description": "Explore a day in the life.", "url": "/lessons/tech/gr10/bonus/daily.pdf" },
+          { "title": "How do websites talk to each other?", "description": "Understand web communication.", "url": "/lessons/tech/gr10/bonus/web-comm.pdf" },
+          { "title": "Exploring Tech Careers", "description": "Learn about tech career paths.", "url": "/lessons/tech/gr10/bonus/careers.pdf" },
+          { "title": "Introduction to Cybersecurity", "description": "Discover cybersecurity basics.", "url": "/lessons/tech/gr10/bonus/cybersecurity.pdf" }
+        ]
+      },
+      {
+        "grade": 11,
+        "terms": [
+          {
+            "name": "Term 1: Python Fundamentals",
+            "topics": [
+              { "title": "Syntax, Variables, and Data Types", "description": "Learn Python basics.", "url": "/lessons/tech/gr11/term1/syntax.pdf" },
+              { "title": "Control Flow: If-Statements and Loops", "description": "Master control structures.", "url": "/lessons/tech/gr11/term1/control-flow.pdf" },
+              { "title": "Functions and Modules", "description": "Create reusable code.", "url": "/lessons/tech/gr11/term1/functions.pdf" },
+              { "title": "Lists, Tuples, Dictionaries", "description": "Work with data structures.", "url": "/lessons/tech/gr11/term1/data-structures.pdf" }
+            ]
+          },
+          {
+            "name": "Term 2: Intermediate Python",
+            "topics": [
+              { "title": "File Handling (Read/Write)", "description": "Read and write files.", "url": "/lessons/tech/gr11/term2/file-handling.pdf" },
+              { "title": "Error Handling with Try/Except", "description": "Handle errors gracefully.", "url": "/lessons/tech/gr11/term2/error-handling.pdf" },
+              { "title": "Classes and Object-Oriented Programming", "description": "Learn OOP concepts.", "url": "/lessons/tech/gr11/term2/oop.pdf" },
+              { "title": "Working with APIs using Python", "description": "Fetch data with requests.", "url": "/lessons/tech/gr11/term2/apis.pdf" }
+            ]
+          },
+          {
+            "name": "Term 3: Data Analysis & Visualization",
+            "topics": [
+              { "title": "Intro to NumPy and Pandas", "description": "Manipulate data with libraries.", "url": "/lessons/tech/gr11/term3/numpy-pandas.pdf" },
+              { "title": "Matplotlib and Seaborn for Visualization", "description": "Create data visualizations.", "url": "/lessons/tech/gr11/term3/visualization.pdf" },
+              { "title": "Mini Project: Analyzing Real-World Data", "description": "Analyze a dataset.", "url": "/lessons/tech/gr11/term3/mini-project.pdf" }
+            ]
+          },
+          {
+            "name": "Term 4: Python Projects & AI Basics",
+            "topics": [
+              { "title": "Project: Build a Game or CLI Tool", "description": "Create a practical project.", "url": "/lessons/tech/gr11/term4/project.pdf" },
+              { "title": "Introduction to AI & Machine Learning", "description": "Explore AI concepts.", "url": "/lessons/tech/gr11/term4/ai-intro.pdf" },
+              { "title": "Tools: Teachable Machine, Scratch for AI", "description": "Experiment with AI tools.", "url": "/lessons/tech/gr11/term4/ai-tools.pdf" },
+              { "title": "Presentation: How AI Will Shape Our Future", "description": "Discuss AI’s impact.", "url": "/lessons/tech/gr11/term4/presentation.pdf" }
+            ]
+          }
+        ],
+        "bonus": [
+          { "title": "Python Problem-Solving Contests", "description": "Compete in coding challenges.", "url": "/lessons/tech/gr11/bonus/contests.pdf" },
+          { "title": "Visits from University Students or Tech Professionals", "description": "Learn from experts.", "url": "/lessons/tech/gr11/bonus/visits.pdf" },
+          { "title": "Build Your Own ChatGPT Clone", "description": "Create a simple chatbot.", "url": "/lessons/tech/gr11/bonus/chatgpt-clone.pdf" },
+          { "title": "AI and the Environment", "description": "Explore AI’s environmental impact.", "url": "/lessons/tech/gr11/bonus/ai-environment.pdf" },
+          { "title": "Tech Entrepreneurship: How to Start Your Own Startup", "description": "Learn startup basics.", "url": "/lessons/tech/gr11/bonus/startup.pdf" }
+        ]
+      },
+      {
+        "grade": 12,
+        "terms": [
+          {
+            "name": "Term 1: Deep Dive into AI & Machine Learning",
+            "topics": [
+              { "title": "Refresher: Python and Data Structures", "description": "Review Python essentials.", "url": "/lessons/tech/gr12/term1/refresher.pdf" },
+              { "title": "Introduction to Machine Learning", "description": "Supervised vs. unsupervised learning.", "url": "/lessons/tech/gr12/term1/ml-intro.pdf" },
+              { "title": "Tools: Scikit-learn, TensorFlow, Google Colab", "description": "Set up ML tools.", "url": "/lessons/tech/gr12/term1/tools.pdf" }
+            ]
+          },
+          {
+            "name": "Term 2: Model Training & Evaluation",
+            "topics": [
+              { "title": "Working with Datasets", "description": "Handle CSV, APIs, web scraping.", "url": "/lessons/tech/gr12/term2/datasets.pdf" },
+              { "title": "Training Simple Models", "description": "Build decision trees, linear regression.", "url": "/lessons/tech/gr12/term2/training.pdf" },
+              { "title": "Evaluating Model Performance", "description": "Use accuracy, confusion matrix.", "url": "/lessons/tech/gr12/term2/evaluation.pdf" },
+              { "title": "Ethics in AI", "description": "Discuss bias, privacy, fairness.", "url": "/lessons/tech/gr12/term2/ethics.pdf" }
+            ]
+          },
+          {
+            "name": "Term 3: AI in Practice",
+            "topics": [
+              { "title": "NLP and Computer Vision Basics", "description": "Explore practical AI fields.", "url": "/lessons/tech/gr12/term3/nlp-vision.pdf" },
+              { "title": "Pre-trained Models", "description": "Use HuggingFace, OpenAI models.", "url": "/lessons/tech/gr12/term3/pretrained.pdf" },
+              { "title": "Real-World Applications", "description": "AI in health, finance, education.", "url": "/lessons/tech/gr12/term3/applications.pdf" },
+              { "title": "Project: Chatbot or Recommendation System", "description": "Build a practical AI project.", "url": "/lessons/tech/gr12/term3/project.pdf" }
+            ]
+          },
+          {
+            "name": "Term 4: Capstone Project",
+            "topics": [
+              { "title": "Propose and Build Your Own AI Project", "description": "Design your project.", "url": "/lessons/tech/gr12/term4/propose.pdf" },
+              { "title": "Weekly Progress Updates and Peer Reviews", "description": "Track and refine your work.", "url": "/lessons/tech/gr12/term4/progress.pdf" },
+              { "title": "Final Showcase and Certificate", "description": "Present and earn a certificate.", "url": "/lessons/tech/gr12/term4/showcase.pdf" }
+            ]
+          }
+        ],
+        "bonus": [
+          { "title": "AI Career Day or University Open Day", "description": "Explore AI career paths.", "url": "/lessons/tech/gr12/bonus/career-day.pdf" },
+          { "title": "Publish Student Projects Online", "description": "Share on GitHub or a class site.", "url": "/lessons/tech/gr12/bonus/publish.pdf" },
+          { "title": "Build Your Own ChatGPT Clone", "description": "Create an advanced chatbot.", "url": "/lessons/tech/gr12/bonus/chatgpt-clone.pdf" },
+          { "title": "AI and the Environment", "description": "Study AI’s environmental impact.", "url": "/lessons/tech/gr12/bonus/ai-environment.pdf" },
+          { "title": "Tech Entrepreneurship: How to Start Your Own Startup", "description": "Learn startup basics.", "url": "/lessons/tech/gr12/bonus/startup.pdf" },
+          { "title": "Ethics in AI and the Future of Work", "description": "Discuss AI’s societal impact.", "url": "/lessons/tech/gr12/bonus/ethics-future.pdf" }
+        ]
       }
     ]
   },
   {
     "subject": "Personal Development",
-    "icon": "&#127775;",
+    "icon": "🌟",
     "class": "personal-dev",
     "grades": [
       {
@@ -330,6 +695,121 @@
               { "title": "Preparing for the Future", "description": "Plan for high school and beyond.", "url": "/lessons/personal-dev/gr9/term4/future.pdf" }
             ]
           }
+        ]
+      },
+      {
+        "grade": 10,
+        "terms": [
+          {
+            "name": "Term 1: Career Exploration and Planning",
+            "topics": [
+              { "title": "Identifying Career Interests", "description": "Explore career paths.", "url": "/lessons/personal-dev/gr10/term1/interests.pdf" },
+              { "title": "Setting Career Goals", "description": "Plan your career journey.", "url": "/lessons/personal-dev/gr10/term1/goals.pdf" },
+              { "title": "Researching Career Options", "description": "Learn about industries.", "url": "/lessons/personal-dev/gr10/term1/research.pdf" }
+            ]
+          },
+          {
+            "name": "Term 2: Financial Literacy Basics",
+            "topics": [
+              { "title": "Budgeting and Saving", "description": "Manage personal finances.", "url": "/lessons/personal-dev/gr10/term2/budgeting.pdf" },
+              { "title": "Understanding Credit and Debt", "description": "Learn financial responsibility.", "url": "/lessons/personal-dev/gr10/term2/credit.pdf" },
+              { "title": "Financial Goal Setting", "description": "Plan for financial success.", "url": "/lessons/personal-dev/gr10/term2/financial-goals.pdf" }
+            ]
+          },
+          {
+            "name": "Term 3: Stress Management and Well-Being",
+            "topics": [
+              { "title": "Recognizing Stress and Triggers", "description": "Understand stress causes.", "url": "/lessons/personal-dev/gr10/term3/stress.pdf" },
+              { "title": "Mindfulness and Relaxation Techniques", "description": "Practice well-being.", "url": "/lessons/personal-dev/gr10/term3/mindfulness.pdf" },
+              { "title": "Balancing School and Life", "description": "Maintain healthy balance.", "url": "/lessons/personal-dev/gr10/term3/balance.pdf" }
+            ]
+          },
+          {
+            "name": "Term 4: Leadership and Community Impact",
+            "topics": [
+              { "title": "Advanced Leadership Skills", "description": "Lead with impact.", "url": "/lessons/personal-dev/gr10/term4/leadership.pdf" },
+              { "title": "Community Service Project", "description": "Plan a service initiative.", "url": "/lessons/personal-dev/gr10/term4/project.pdf" },
+              { "title": "Reflection and Presentation", "description": "Share your impact.", "url": "/lessons/personal-dev/gr10/term4/presentation.pdf" }
+            ]
+          }
+        ]
+      },
+      {
+        "grade": 11,
+        "terms": [
+          {
+            "name": "Term 1: Advanced Career Preparation",
+            "topics": [
+              { "title": "Writing a Resume and Cover Letter", "description": "Prepare for opportunities.", "url": "/lessons/personal-dev/gr11/term1/resume.pdf" },
+              { "title": "Interview Skills", "description": "Practice interview techniques.", "url": "/lessons/personal-dev/gr11/term1/interview.pdf" },
+              { "title": "Exploring Tertiary Education", "description": "Plan for university or college.", "url": "/lessons/personal-dev/gr11/term1/tertiary.pdf" }
+            ]
+          },
+          {
+            "name": "Term 2: Emotional Regulation and Resilience",
+            "topics": [
+              { "title": "Advanced Emotional Intelligence", "description": "Deepen emotional skills.", "url": "/lessons/personal-dev/gr11/term2/emotional.pdf" },
+              { "title": "Coping with Failure", "description": "Build resilience strategies.", "url": "/lessons/personal-dev/gr11/term2/failure.pdf" },
+              { "title": "Self-Care Practices", "description": "Prioritize mental health.", "url": "/lessons/personal-dev/gr11/term2/self-care.pdf" }
+            ]
+          },
+          {
+            "name": "Term 3: Ethical Decision-Making",
+            "topics": [
+              { "title": "Understanding Ethics and Values", "description": "Explore ethical principles.", "url": "/lessons/personal-dev/gr11/term3/ethics.pdf" },
+              { "title": "Decision-Making Frameworks", "description": "Make informed choices.", "url": "/lessons/personal-dev/gr11/term3/decision-making.pdf" },
+              { "title": "Case Studies in Ethics", "description": "Analyze real-world scenarios.", "url": "/lessons/personal-dev/gr11/term3/case-studies.pdf" }
+            ]
+          },
+          {
+            "name": "Term 4: Social Responsibility",
+            "topics": [
+              { "title": "Global Citizenship", "description": "Understand global issues.", "url": "/lessons/personal-dev/gr11/term4/citizenship.pdf" },
+              { "title": "Advocacy and Activism", "description": "Learn to advocate for change.", "url": "/lessons/personal-dev/gr11/term4/advocacy.pdf" },
+              { "title": "Project: Social Impact Initiative", "description": "Create a community project.", "url": "/lessons/personal-dev/gr11/term4/project.pdf" }
+            ]
+          }
+        ]
+      },
+      {
+        "grade": 12,
+        "terms": [
+          {
+            "name": "Term 1: Life After High School",
+            "topics": [
+              { "title": "Transitioning to Adulthood", "description": "Prepare for independence.", "url": "/lessons/personal-dev/gr12/term1/transition.pdf" },
+              { "title": "Managing Finances as a Young Adult", "description": "Advance financial literacy.", "url": "/lessons/personal-dev/gr12/term1/finances.pdf" },
+              { "title": "Building a Professional Network", "description": "Connect with mentors.", "url": "/lessons/personal-dev/gr12/term1/network.pdf" }
+            ]
+          },
+          {
+            "name": "Term 2: Personal Growth Reflection",
+            "topics": [
+              { "title": "Reflecting on High School Journey", "description": "Assess personal growth.", "url": "/lessons/personal-dev/gr12/term2/reflection.pdf" },
+              { "title": "Setting Long-Term Goals", "description": "Plan for the future.", "url": "/lessons/personal-dev/gr12/term2/long-term-goals.pdf" },
+              { "title": "Lifelong Learning Mindset", "description": "Embrace continuous growth.", "url": "/lessons/personal-dev/gr12/term2/lifelong-learning.pdf" }
+            ]
+          },
+          {
+            "name": "Term 3: Leadership in the Real World",
+            "topics": [
+              { "title": "Leadership in Professional Settings", "description": "Apply skills in careers.", "url": "/lessons/personal-dev/gr12/term3/leadership.pdf" },
+              { "title": "Navigating Workplace Challenges", "description": "Handle real-world issues.", "url": "/lessons/personal-dev/gr12/term3/challenges.pdf" },
+              { "title": "Mentorship and Giving Back", "description": "Support others’ growth.", "url": "/lessons/personal-dev/gr12/term3/mentorship.pdf" }
+            ]
+          },
+          {
+            "name": "Term 4: Capstone Project",
+            "topics": [
+              { "title": "Personal Development Portfolio", "description": "Compile your growth journey.", "url": "/lessons/personal-dev/gr12/term4/portfolio.pdf" },
+              { "title": "Peer Review and Feedback", "description": "Refine your portfolio.", "url": "/lessons/personal-dev/gr12/term4/review.pdf" },
+              { "title": "Final Showcase and Celebration", "description": "Present your journey.", "url": "/lessons/personal-dev/gr12/term4/showcase.pdf" }
+            ]
+          }
+        ],
+        "bonus": [
+          { "title": "Career Day with Professionals", "description": "Learn from industry leaders.", "url": "/lessons/personal-dev/gr12/bonus/career-day.pdf" },
+          { "title": "Life Skills for the Future", "description": "Prepare for adulthood.", "url": "/lessons/personal-dev/gr12/bonus/life-skills.pdf" }
         ]
       }
     ]
